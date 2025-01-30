@@ -119,10 +119,10 @@ parse_config:
   raw_binding_map:
     '&deae': "Ä"
     '&deoe': "Ö"
-    '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-1$$}
+    '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
     
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-    '&hrm LEFT_WIN A': "A\nGUI"
+    '&hrm LEFT_WIN A': {s: , h: "A", t: "GUI"}
     '&hrm LEFT_ALT R': "R\nALT"
     '&hrm LCTRL S': "S\nCTRL"
     '&hrm RCTRL E': "E\nCTRL"
@@ -228,14 +228,14 @@ parse_config:
 
     # Bluetooth
     "&bt BT_SEL 0":
-      {t: $$mdi:bluetooth$$, h: $$mdi:numeric-1$$}
+      {s: $$mdi:bluetooth$$, t: $$mdi:numeric-1$$}
     "&bt BT_SEL 1":
       {t: $$mdi:bluetooth$$, h: $$mdi:numeric-2$$}
     "&bt BT_SEL 2":
-      {t: $$mdi:bluetooth$$, h: $$mdi:numeric-3$$}
+      {s: $$mdi:bluetooth$$, t: $$mdi:numeric-3$$}
     "&bt BT_SEL 3":
-      {t: $$mdi:bluetooth$$, h: $$mdi:numeric-4$$}
-    "&bt BT_SEL 4": {t: $$mdi:bluetooth$$, h: $$mdi:numeric-0$$}
+      {s: $$mdi:bluetooth$$, t: $$mdi:numeric-4$$}
+    "&bt BT_SEL 4": {s: $$mdi:bluetooth$$, t: $$mdi:numeric-5$$}
       
     "&out OUT_TOG":
       shifted: $$mdi:usb$$
