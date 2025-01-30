@@ -9,4 +9,6 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      extra_cmake_args: "-DBUILDING_FIRMWARE=1"
+    
+    env:
+      BUILDING_FIRMWARE: "1"  # This defines the variable for the build process
