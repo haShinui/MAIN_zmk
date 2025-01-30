@@ -117,6 +117,7 @@ parse_config:
     type: trans
 
   raw_binding_map:
+    '&deae': "Ä"
     # Layers
     "&ltq 1 BACKSPACE":
       tap:  $$mdi:backspace$$
