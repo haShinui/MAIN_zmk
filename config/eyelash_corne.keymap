@@ -9,7 +9,7 @@
 
 #include <input/processors.dtsi>
 
-#include "german.dtsi"
+
 
 /* Mouse input processing */
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
