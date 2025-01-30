@@ -218,10 +218,7 @@ parse_config:
       shifted: $$mdi:backspace-reverse-outline$$
 
     # Bluetooth
-    "&bt BT_SEL 0":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
-      hold: 1
+    
     "&bt BT_SEL 1":
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
