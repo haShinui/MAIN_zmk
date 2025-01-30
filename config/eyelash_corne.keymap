@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #include <input/processors.dtsi>
-#include "zmk-helpers/unicode-chars/german.dtsi"
+
 #include "german.dtsi"
 
 
