@@ -122,7 +122,7 @@ parse_config:
     '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
     
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-    '&hrm LEFT_WIN A': {s: , h: "A", t: "GUI"}
+    '&hrm LEFT_WIN A': {s: "", h: "A", t: "GUI"}
     '&hrm LEFT_ALT R': "R\nALT"
     '&hrm LCTRL S': "S\nCTRL"
     '&hrm RCTRL E': "E\nCTRL"
