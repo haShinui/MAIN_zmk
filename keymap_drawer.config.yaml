@@ -119,7 +119,7 @@ parse_config:
   raw_binding_map:
     '&deae': "Ä"
     '&deoe': "Ö"
-    '&deue': "Bluetooth 2\nÜ"
+    '&deue': {t: $$mdi:bluetooth$$, h: "Ü"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
     '&hrm LEFT_WIN A': "A\nGUI"
