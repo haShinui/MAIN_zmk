@@ -118,6 +118,7 @@ parse_config:
 
   raw_binding_map:
     '&deae': "Ä"
+    '&bt BT_SEL 0': {t: $$mdi:bluetooth$$, h: $$mdi:numeric-0$$}
     # Layers
     "&ltq 1 BACKSPACE":
       tap:  $$mdi:backspace$$
