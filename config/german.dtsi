@@ -53,7 +53,7 @@ ZMK_BEHAVIOR(deae, tap_dance,
 
 ZMK_BEHAVIOR(deoe, tap_dance,
     tapping-term-ms = <200>;
-    bindings = <&bt BT_SEL 2>, <&de_oe>;
+    bindings = <&de_oe>, <&de_oe>;
 )
 
 ZMK_BEHAVIOR(deue, tap_dance,
