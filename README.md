@@ -20,7 +20,7 @@ If you need a 3D model of this keyboard, email `380465425@qq.com`.
 
 ## Keymap Diagram
 
-![Diagram](https://raw.githubusercontent.com/haShinui/MAIN_zmk/Mymain/keymap-drawer/eyelash_corne.svg)
+![Diagram](https://raw.githubusercontent.com/haShinui/MAIN_zmk/refs/heads/Mymain/keymap-drawer/eyelash_corne.svg)
 
 
 
