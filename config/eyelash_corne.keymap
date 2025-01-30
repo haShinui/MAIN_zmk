@@ -9,8 +9,6 @@
 
 #include <input/processors.dtsi>
 
-#include "german.dtsi"
-
 
 
 /*
