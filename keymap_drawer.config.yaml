@@ -119,8 +119,9 @@ parse_config:
   raw_binding_map:
     '&deae': "Ä"
     '&deoe': "Ö"
+    '&studio_unlock': "ZMK"
     '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
-    '&studio_unlock': "ZMK 2\nStudio"
+    
     '&next_previous': {s: "", h: "Next Song", t: "Previous"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
