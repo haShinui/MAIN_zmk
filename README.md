@@ -23,3 +23,19 @@
 
 ### *Note*
 When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), after pushing you need to **reconfigure .keymap** file and put **german.dtsi** at the bottom of the other includes
+example
+```
+#define HOST_OS 1
+#include <behaviors.dtsi>
+#include "zmk-helpers/helper.h"
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+
+#include <input/processors.dtsi>
+
+#include "german.dtsi"
+```
