@@ -1,16 +1,16 @@
 #define HOST_OS 1
-#include <behaviors.dtsi>
+
 #include "zmk-helpers/helper.h"
+#include <dt-bindings/zmk/mouse.h>
+#include <input/processors.dtsi>
+#include "german.dtsi"
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-
-#include <input/processors.dtsi>
-
-#include "german.dtsi"
 
 /* Mouse input processing */
 
@@ -30,7 +30,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "TAB_SWITCHING";
             #sensor-binding-cells = <0>;
-            bindings = <&kp LC(O)>, <&kp P>;
+            bindings = <&kp LC(LA(P))>, <&kp LC(LA(O))>;
         };
 
         App_switching: App_switching {
