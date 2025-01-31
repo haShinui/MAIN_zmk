@@ -44,7 +44,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_LAYER";
             #binding-cells = <0>;
-            bindings = <&mo 2>, <&kp F>;
+            bindings = <&mo 2>, <&kp CAPSLOCK>;
         };
 
         next_previous: next_previous {
