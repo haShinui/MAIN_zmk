@@ -3,41 +3,41 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - Q
   - W
-  - E
-  - R
-  - T
-  - $$mdi:arrow-up-bold$$
-  - Y
-  - U
-  - I
-  - O
+  - F
   - P
+  - B
+  - $$mdi:arrow-up-bold$$
+  - J
+  - L
+  - U
+  - Y
+  - {t: ;, s: ':'}
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: A, h: GUI}
+  - {t: R, h: ALT}
+  - {t: S, h: CTRL}
   - F
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
-  - H
-  - J
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - M
+  - N
+  - {t: E, h: CTRL}
+  - {t: I, h: ALT}
+  - {t: O, h: GUI}
   - {t: '''', s: '"'}
   - '&tap_layer'
   - Z
   - X
   - C
+  - D
   - V
-  - B
   - $$mdi:keyboard-space$$
   - $$mdi:arrow-down-bold$$
-  - N
-  - M
+  - K
+  - H
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
@@ -57,13 +57,15 @@ layers:
   - {t: Gui+5, h: Gui+Sft+5, s: Gui+%}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:bluetooth-off$$
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:numeric-1$$', s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:numeric-2$$', h: Ü, s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:numeric-3$$', s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:numeric-4$$', s: '$$mdi:bluetooth$$'}
+  - 'ZMK
+
+    Studio'
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
-  - '&studio_unlock'
-  - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - Ä
   - COPY
   - PASTE
   - UNDO
@@ -73,9 +75,9 @@ layers:
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - MUTE
   - PLAY PAUSE
-  - '&next_previous'
+  - {t: Next Song, h: Previous}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - Ö
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
