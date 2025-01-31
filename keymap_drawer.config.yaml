@@ -122,7 +122,7 @@ parse_config:
     '&studio_unlock': "ZMK\nStudio"
     '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
     
-    '&next_previous': {s: "", h: "Next Song", t: "Previous"}
+    '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
     '&hrm LEFT_WIN A': {s: "", h: "GUI", t: "A"}
