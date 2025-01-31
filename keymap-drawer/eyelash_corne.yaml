@@ -17,7 +17,7 @@ layers:
   - {t: A, h: GUI}
   - {t: R, h: ALT}
   - {t: S, h: CTRL}
-  - F
+  - T
   - G
   - $$mdi:arrow-left-bold$$
   - {t: F, h: '$$mdi:apple-keyboard-command$$'}
