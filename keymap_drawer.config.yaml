@@ -117,7 +117,7 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    '&deae': "Ä"
+    '&deae':  {s: "", h: "Ä", t: "CUT"}
     '&deoe': "Ö"
     '&studio_unlock': "ZMK\nStudio"
     '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
