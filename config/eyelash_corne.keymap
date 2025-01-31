@@ -85,10 +85,10 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp BACKSPACE  &kp Q            &kp W            &kp F         &kp P      &kp B                                 &kp LA(LC(O))                &kp J        &kp L          &kp U           &kp Y             &kp SEMI          &kp DELETE
-&key_repeat    &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &kp F      &kp G                       &kp LEFT  &kp ENTER         &kp RIGHT  &kp M        &kp N          &hrm RCTRL E    &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &kp SQT
-&tap_layer     &kp Z            &kp X            &kp C         &kp D      &kp V      &kp LA(LC(C))              &kp LA(LC(DOWN))             &kp K        &kp H          &kp COMMA       &kp DOT           &kp FSLH          &mo 3
-                                                 &kp LGUI      &kp SPACE  &lt 1 TAB                                                          &lt 2 ENTER  &kp BACKSPACE  &sk LEFT_SHIFT
+&kp BACKSPACE  &kp Q            &kp W            &kp F         &kp P      &kp B                                 &kp UP_ARROW             &kp J        &kp L          &kp U           &kp Y             &kp SEMI          &kp DELETE
+&key_repeat    &hrm LEFT_WIN A  &hrm LEFT_ALT R  &hrm LCTRL S  &kp F      &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &kp N          &hrm RCTRL E    &hrm RIGHT_ALT I  &hrm RIGHT_WIN O  &kp SQT
+&tap_layer     &kp Z            &kp X            &kp C         &kp D      &kp V      &kp LA(LC(C))              &kp DOWN                 &kp K        &kp H          &kp COMMA       &kp DOT           &kp FSLH          &mo 3
+                                                 &kp LGUI      &kp SPACE  &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE  &sk LEFT_SHIFT
             >;
 
             sensor-bindings = <&Tab_switching>;
