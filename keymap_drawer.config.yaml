@@ -119,7 +119,7 @@ parse_config:
   raw_binding_map:
     '&deae': "Ä"
     '&deoe': "Ö"
-    '&studio_unlock': "ZMK"
+    '&studio_unlock': "ZMK Studio"
     '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
     
     '&next_previous': {s: "", h: "Next Song", t: "Previous"}
