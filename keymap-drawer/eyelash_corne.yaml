@@ -200,4 +200,4 @@ layers:
 combos:
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
-  l: [BASE]
+  l: [BASE, FUNCTIONS, SYMBOLs, FN]
