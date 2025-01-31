@@ -6,14 +6,14 @@ layers:
   - F
   - P
   - B
-  - $$mdi:arrow-up-bold$$
+  - Alt+Ctl+O
   - J
   - L
   - U
   - Y
   - {t: ;, s: ':'}
   - $$mdi:backspace-reverse-outline$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&key_repeat'
   - {t: A, h: GUI}
   - {t: R, h: ALT}
   - {t: S, h: CTRL}
@@ -34,14 +34,14 @@ layers:
   - C
   - D
   - V
-  - $$mdi:keyboard-space$$
-  - $$mdi:arrow-down-bold$$
+  - Alt+Ctl+C
+  - Alt+Ctl+$$mdi:arrow-down-bold$$
   - K
   - H
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - '&key_repeat'
+  - FN
   - LGUI
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-tab$$', h: FUNCTIONS}
@@ -97,8 +97,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-space$$
   SYMBOLs:
   - {t: '`', s: '~'}
   - '1'
@@ -171,6 +171,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-off$$
+  - PLAY PAUSE
+  - {t: Next Song, h: Previous}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -180,7 +183,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {t: PLAY PAUSE, h: '$$mdi:skip-next$$'}
   - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -189,12 +194,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
