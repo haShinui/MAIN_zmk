@@ -6,7 +6,7 @@ layers:
   - F
   - P
   - B
-  - Alt+Ctl+O
+  - $$mdi:arrow-up-bold$$
   - J
   - L
   - U
@@ -20,7 +20,7 @@ layers:
   - F
   - G
   - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: F, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:arrow-right-bold$$
   - M
   - N
@@ -35,7 +35,7 @@ layers:
   - D
   - V
   - Alt+Ctl+C
-  - Alt+Ctl+$$mdi:arrow-down-bold$$
+  - $$mdi:arrow-down-bold$$
   - K
   - H
   - {t: ',', s: <}
