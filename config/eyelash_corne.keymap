@@ -1,16 +1,16 @@
 #define HOST_OS 1
-
-#include "zmk-helpers/helper.h"
-#include <dt-bindings/zmk/mouse.h>
-#include <input/processors.dtsi>
-#include "german.dtsi"
 #include <behaviors.dtsi>
+#include "zmk-helpers/helper.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+
+#include <input/processors.dtsi>
+
+#include "german.dtsi"
 
 /* Mouse input processing */
 
@@ -73,11 +73,10 @@
         compatible = "zmk,combos";
 
         Escape {
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp ESC>;
             key-positions = <0 1>;
-            layers = <0 1 2>;
+            layers = <0>;
             timeout-ms = <70>;
-            slow-release;
         };
     };
 
