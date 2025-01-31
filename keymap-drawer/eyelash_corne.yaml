@@ -65,7 +65,7 @@ layers:
 
     Studio'
   - {t: '$$mdi:backspace$$', type: backspace}
-  - Ä
+  - {t: CUT, h: Ä}
   - COPY
   - PASTE
   - UNDO
