@@ -18,28 +18,6 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
 
 
-
-/* Left-hand HRMs. */
-ZMK_BEHAVIOR(hmr, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-on-release;
-)
-
-/* Right-hand HRMs. */
-ZMK_BEHAVIOR(hmr, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-on-release;
-)
-
-
 / {
     behaviors {
         td0: td0 {

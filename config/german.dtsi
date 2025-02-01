@@ -76,3 +76,11 @@ ZMK_BEHAVIOR(tap_mu, tap_dance,
 ZMK_COMBO(layer_3,  &tog 3, 0 1, ALL, 25)
 	
 
+ZMK_BEHAVIOR(hmr, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    bindings = <&kp>, <&kp>;
+    hold-trigger-on-release;
+)
