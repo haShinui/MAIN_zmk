@@ -125,12 +125,12 @@ parse_config:
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-    '&hrm LEFT_WIN A': {s: "", h: "GUI", t: "A"}
-    '&hrm LEFT_ALT R': {s: "", h: "ALT", t: "R"}
-    '&hrm LCTRL S': {s: "", h: "CTRL", t: "S"}
-    '&hrm RCTRL E': {s: "", h: "CTRL", t: "E"}
-    '&hrm RIGHT_ALT I': {s: "", h: "ALT", t: "I"}
-    '&hrm RIGHT_WIN O': {s: "", h: "GUI", t: "O"}
+    '&hmr LEFT_WIN A': {s: "", h: "GUI", t: "A"}
+    '&hmr LEFT_ALT R': {s: "", h: "ALT", t: "R"}
+    '&hmr LCTRL S': {s: "", h: "CTRL", t: "S"}
+    '&hmr RCTRL E': {s: "", h: "CTRL", t: "E"}
+    '&hmr RIGHT_ALT I': {s: "", h: "ALT", t: "I"}
+    '&hmr RIGHT_WIN O': {s: "", h: "GUI", t: "O"}
     # Layers
     "&ltq 1 BACKSPACE":
       tap:  $$mdi:backspace$$
