@@ -78,7 +78,7 @@
             display-name = "BASE";
             bindings = <
 &kp BACKSPACE  &kp Q            &kp W            &kp F         &kp P      &kp B                                 &kp UP_ARROW             &kp J        &kp L          &kp U           &kp Y             &kp SEMI          &kp DELETE
-&key_repeat    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LCTRL S  &kp T      &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &kp N          &hmr RCTRL E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
+&key_repeat    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LCTRL S  &hrm LEFT_SHIFT T      &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &hmr LEFT_SHIFT N          &hmr RCTRL E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
 &tap_layer     &kp Z            &kp X            &kp C         &kp D      &kp V      &kp LA(LC(C))              &kp DOWN                 &kp K        &kp H          &kp COMMA       &kp DOT           &kp FSLH          &mo 3
                                                  &kp LGUI      &kp SPACE  &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE  &sk LEFT_SHIFT
             >;
