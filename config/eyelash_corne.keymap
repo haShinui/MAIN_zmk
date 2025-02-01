@@ -26,7 +26,6 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     quick-tap-ms = <175>;
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
 )
 
@@ -37,7 +36,6 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     quick-tap-ms = <175>;
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
 
