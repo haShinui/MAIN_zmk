@@ -66,10 +66,10 @@ layers:
     Studio'
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: CUT, h: Ä}
-  - COPY
-  - PASTE
-  - UNDO
-  - REDO
+  - {t: COPY, h: C}
+  - {t: PASTE, h: Gui+P}
+  - {t: UNDO, h: Z}
+  - {t: REDO, h: Gui+Y}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
@@ -163,9 +163,9 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - AC CUT
-  - AC COPY
-  - AC PASTE
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
