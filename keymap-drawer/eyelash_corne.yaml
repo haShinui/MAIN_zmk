@@ -17,13 +17,13 @@ layers:
   - {t: A, h: GUI}
   - {t: R, h: ALT}
   - {t: S, h: CTRL}
-  - T
+  - '&hmr LEFT_SHIFT T'
   - G
   - $$mdi:arrow-left-bold$$
   - {t: F, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:arrow-right-bold$$
   - M
-  - N
+  - '&hmr LEFT_SHIFT N'
   - {t: E, h: CTRL}
   - {t: I, h: ALT}
   - {t: O, h: GUI}
@@ -163,9 +163,9 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - AC CUT
+  - AC COPY
+  - AC PASTE
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
