@@ -1,16 +1,16 @@
 #define HOST_OS 1
-#include <behaviors.dtsi>
+
 #include "zmk-helpers/helper.h"
+#include <dt-bindings/zmk/mouse.h>
+#include <input/processors.dtsi>
+#include "german.dtsi"
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-
-#include <input/processors.dtsi>
-
-#include "german.dtsi"
 
 /* Mouse input processing */
 
@@ -90,7 +90,7 @@
             display-name = "FUNCTIONS";
             bindings = <
 &kp ESCAPE     &mt LG(LS(N1)) LG(NUMBER_1)  &mt LG(LS(N2)) LG(NUMBER_2)  &mt LG(LS(N3)) LG(NUMBER_3)  &mt LG(LS(N4)) LG(NUMBER_4)  &mt LG(LS(N5)) LG(N5)                                      &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue           &bt BT_SEL 2  &bt BT_SEL 3  &studio_unlock
-&kp BACKSPACE  &deae                        &kp K_COPY                   &kp K_PASTE                  &kp K_UNDO                   &kp K_REDO                                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp K_MUTE    &kp K_PLAY_PAUSE  &next_previous  &trans        &deoe         &trans
+&kp BACKSPACE  &deae                        &mt LG(C) K_COPY             &mt LG(P) K_PASTE            &mt LG(Z) K_UNDO             &mt LG(Y) K_REDO                           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp K_MUTE    &kp K_PLAY_PAUSE  &next_previous  &trans        &deoe         &trans
 &trans         &trans                       &trans                       &trans                       &kp C_AC_HOME                &kp C_AL_LOGOFF        &kp C_PLAY_PAUSE                    &mmv MOVE_DOWN                   &trans        &trans            &trans          &trans        &trans        &trans
                                                                          &trans                       &trans                       &trans                                                                                      &kp LEFT_GUI  &kp LEFT_SHIFT    &kp BACKSPACE
             >;
@@ -113,10 +113,10 @@
         Fn_layer {
             display-name = "FN";
             bindings = <
-&kp ESC  &kp F1        &kp F2         &kp F3          &kp F4  &kp F5                                     &trans          &kp F6      &kp F7            &kp F8          &kp F9  &kp F10  &kp F11
-&trans   &kp C_AC_CUT  &kp C_AC_COPY  &kp C_AC_PASTE  &trans  &trans                             &trans  &trans  &trans  &kp C_MUTE  &kp C_PLAY_PAUSE  &next_previous  &trans  &trans   &trans
-&trans   &trans        &trans         &trans          &trans  &trans  &mt C_NEXT C_PLAY_PAUSE            &trans          &trans      &trans            &trans          &trans  &trans   &trans
-                                      &trans          &trans  &trans                                                     &tog 4      &trans            &trans
+&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                     &trans          &kp F6      &kp F7            &kp F8          &kp F9  &kp F10  &kp F11
+&trans   &trans  &trans  &trans  &trans  &trans                             &trans  &trans  &trans  &kp C_MUTE  &kp C_PLAY_PAUSE  &next_previous  &trans  &trans   &trans
+&trans   &trans  &trans  &trans  &trans  &trans  &mt C_NEXT C_PLAY_PAUSE            &trans          &trans      &trans            &trans          &trans  &trans   &trans
+                         &trans  &trans  &trans                                                     &tog 4      &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
