@@ -62,7 +62,7 @@
     };
 
     scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
+        compatible = "zmk,behavior-sensor-rotate";a
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
@@ -79,7 +79,7 @@
             bindings = <
 &kp BACKSPACE  &kp Q            &kp W            &kp F         &kp P              &kp B                                 &kp UP_ARROW             &kp J        &kp L              &kp U           &kp Y             &kp SEMI          &kp DELETE
 &key_repeat    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LCTRL S  &hmr LEFT_SHIFT T  &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &hmr LEFT_SHIFT N  &hmr RCTRL E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
-&tap_layer     &kp Z            &kp X            &kp C         &kp D              &kp V      &kp LA(LC(C))              &kp DOWN                 &kp K        &kp H              &kp COMMA       &kp DOT           &kp FSLH          &mo 3
+&tap_layer     &kp Z            &kp X            &kp C         &kp D              &kp V      &kp C_PLAY_PAUSE           &kp DOWN                 &kp K        &kp H              &kp COMMA       &kp DOT           &kp FSLH          &msc SCRL_UP
                                                  &kp LGUI      &kp SPACE          &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE      &sk LEFT_SHIFT
             >;
 
@@ -89,10 +89,10 @@
         lower_layer {
             display-name = "FUNCTIONS";
             bindings = <
-&kp ESCAPE     &mt LG(LS(N1)) LG(NUMBER_1)  &mt LG(LS(N2)) LG(NUMBER_2)  &mt LG(LS(N3)) LG(NUMBER_3)  &mt LG(LS(N4)) LG(NUMBER_4)  &mt LG(LS(N5)) LG(N5)                                      &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue           &bt BT_SEL 2  &bt BT_SEL 3  &studio_unlock
-&kp BACKSPACE  &deae                        &mt LG(C) K_COPY             &mt LG(V) K_PASTE            &mt LG(Z) K_UNDO             &mt LG(Y) K_REDO                           &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp K_MUTE    &kp K_PLAY_PAUSE  &next_previous  &trans        &deoe         &trans
-&trans         &trans                       &trans                       &trans                       &kp C_AC_HOME                &kp C_AL_LOGOFF        &kp C_PLAY_PAUSE                    &mmv MOVE_DOWN                   &trans        &trans            &trans          &trans        &trans        &trans
-                                                                         &trans                       &trans                       &trans                                                                                      &kp LEFT_GUI  &kp LEFT_SHIFT    &kp BACKSPACE
+&kp ESCAPE     &mt LG(LS(N1)) LG(NUMBER_1)  &mt LG(LS(N2)) LG(NUMBER_2)  &mt LG(LS(N3)) LG(NUMBER_3)  &mt LG(LS(N4)) LG(NUMBER_4)  &mt LG(LS(N5)) LG(N5)                                     &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue           &bt BT_SEL 2  &bt BT_SEL 3  &studio_unlock
+&kp BACKSPACE  &deae                        &mt LC(LS(C)) LC(C)          &mt LC(LS(C)) LC(C)          &kp LC(Z)                    &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous  &trans        &deoe         &trans
+&trans         &trans                       &trans                       &trans                       &kp C_AC_HOME                &kp C_AL_LOGOFF        &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &trans        &trans            &trans          &trans        &trans        &trans
+                                                                         &trans                       &trans                       &trans                                                                                     &kp LEFT_GUI  &kp LEFT_SHIFT    &kp BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -101,9 +101,9 @@
         raise_layer {
             display-name = "SYMBOLs";
             bindings = <
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp NUMBER_4  &kp N5                                    &mmv MOVE_UP                     &kp NUMBER_6  &kp N7          &kp N8        &kp N9         &kp N0     &kp BSPC
-&kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
-&trans     &kp DOT       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp FSLH      &sk LEFT_ALT    &trans                    &mmv MOVE_DOWN                   &sl 3         &kp C_AC_HOME   &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &kp ENTER
+&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp NUMBER_4  &kp N5                                 &kp UP_ARROW               &kp NUMBER_6  &kp N7          &kp N8        &kp N9         &kp N0     &kp BSPC
+&kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                   &kp LEFT    &kp LG(F)     &kp RIGHT    &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
+&trans     &kp DOT       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp FSLH      &sk LEFT_ALT    &trans                 &kp DOWN                   &sl 3         &kp C_AC_HOME   &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &kp ENTER
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                             &trans        &trans          &trans
             >;
 

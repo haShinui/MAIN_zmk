@@ -20,6 +20,8 @@
    First build **with** german.dtsi so makes firmware
 3. **Remove german.dtsi**
     So that it can make new drawing and display it, takes some time to update, cached in browser.
+3. **Add german.dtsi back**
+    For next time
 
 ### *Note*
 When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), after pushing you need to **reconfigure .keymap** file and put **german.dtsi** at the bottom of the other includes
