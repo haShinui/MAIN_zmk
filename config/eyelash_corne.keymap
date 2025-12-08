@@ -15,8 +15,22 @@
 
 /* Mouse input processing */
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
+#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+#undef ZMK_MOUSE_DEFAULT_SCRL_VAL
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
+&mmv {
+  acceleration-exponent = <1>;      // 1
+  time-to-max-speed-ms = <400>;     // 300
+  delay-ms = <0>;                   // 0
+};
+
+&msc {
+  acceleration-exponent = <1>;      // 0
+  time-to-max-speed-ms = <100>;     // 300
+  delay-ms = <0>;                   // 0
+};
 
 / {
     behaviors {
@@ -79,7 +93,7 @@
             display-name = "BASE";
             bindings = <
 &kp BACKSPACE  &kp Q            &kp W            &kp F         &kp P              &kp B                                 &kp UP_ARROW             &kp J        &kp L              &kp U           &kp Y             &kp SEMI          &kp DELETE
-&mwh SCROLL_UP    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LCTRL S  &hmr LEFT_SHIFT T  &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &hmr LEFT_SHIFT N  &hmr RCTRL E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
+&key_repeat    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LCTRL S  &hmr LEFT_SHIFT T  &kp G                       &kp LEFT  &kp LG(F)     &kp RIGHT  &kp M        &hmr LEFT_SHIFT N  &hmr RCTRL E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
 &tap_layer     &kp Z            &kp X            &kp C         &kp D              &kp V      &kp C_PLAY_PAUSE           &kp DOWN                 &kp K        &kp H              &kp COMMA       &kp DOT           &kp FSLH          &msc SCRL_UP
                                                  &kp LGUI      &kp SPACE          &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE      &sk LEFT_SHIFT
             >;
