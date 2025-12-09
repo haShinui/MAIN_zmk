@@ -88,11 +88,12 @@
 		};
 
         scroll_test: scroll_test {
-			compatible = "zmk,behavior-sensor-rotate-var";
+			compatible = "zmk,behavior-sensor-rotate;
 			#sensor-binding-cells = <2>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 			tap-ms = <40>;
 		};
+        
     };
 
     
