@@ -80,13 +80,12 @@
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
     };
 
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-            tap-ms = <20>;
-
-    };
+    scroll_encoder: sensor_rotate_kp {
+			compatible = "zmk,behavior-sensor-rotate-var";
+			#sensor-binding-cells = <2>;
+			bindings = <&msc>, <&msc>;
+			tap-ms = <30>;
+		};
 
     combos { compatible = "zmk,combos"; };
 
@@ -126,7 +125,7 @@
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                             &trans        &trans          &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&scroll_encoder SCRL_UP SCRL_DOWN>;
         };
 
         Fn_layer {
