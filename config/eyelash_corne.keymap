@@ -20,7 +20,7 @@
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 40   // 10
 #define ZMK_MOUSE_SCRL_VAL 140
 
 &mmv {
@@ -84,15 +84,15 @@
 			compatible = "zmk,behavior-sensor-rotate-var";
 			#sensor-binding-cells = <2>;
 			bindings = <&msc>, <&msc>;
-			tap-ms = <30>;
+			tap-ms = <40>;
 		};
 
-        scroll_encoder1: scroll_encoder1 {
+        /* scroll_encoder1: scroll_encoder1 {
 			compatible = "zmk,behavior-sensor-rotate-var";
 			#sensor-binding-cells = <2>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <30>;
-		};
+			tap-ms = <40>;
+		}; */
     };
 
     
@@ -111,7 +111,7 @@
                                                  &kp LGUI      &kp SPACE          &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE      &sk LEFT_SHIFT
             >;
 
-            sensor-bindings = /*<&Tab_switching>*/ <&scroll_encoder>;
+            sensor-bindings = /*<&Tab_switching>*/;
         };
 
         lower_layer {
