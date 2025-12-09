@@ -87,7 +87,7 @@
 			tap-ms = <40>;
 		};
 
-        scroll_encoder1: scroll_encoder1 {
+        scroll_test: scroll_test {
 			compatible = "zmk,behavior-sensor-rotate-var";
 			#sensor-binding-cells = <2>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
