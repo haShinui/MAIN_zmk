@@ -80,10 +80,17 @@
             bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
         };
 
-        scroll_encoder: sensor_rotate_kp {
+        scroll_encoder: scroll_encoder {
 			compatible = "zmk,behavior-sensor-rotate-var";
 			#sensor-binding-cells = <2>;
 			bindings = <&msc>, <&msc>;
+			tap-ms = <30>;
+		};
+
+        scroll_encoder1: scroll_encoder1 {
+			compatible = "zmk,behavior-sensor-rotate-var";
+			#sensor-binding-cells = <2>;
+			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 			tap-ms = <30>;
 		};
     };
@@ -104,7 +111,7 @@
                                                  &kp LGUI      &kp SPACE          &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE      &sk LEFT_SHIFT
             >;
 
-            sensor-bindings = <&Tab_switching>;
+            sensor-bindings = /*<&Tab_switching>*/ <&scroll_encoder>;
         };
 
         lower_layer {
