@@ -112,7 +112,7 @@
                                                  &kp LGUI      &kp SPACE          &lt 1 TAB                                                      &lt 2 ENTER  &kp BACKSPACE      &sk LEFT_SHIFT
             >;
 
-            sensor-bindings = <&scroll_encoder1>;
+            sensor-bindings = <&scroll_test>;
         };
 
         lower_layer {
