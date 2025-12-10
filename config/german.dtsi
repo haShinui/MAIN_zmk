@@ -74,7 +74,7 @@ ZMK_BEHAVIOR(tap_mu, tap_dance,
     bindings = <&kp C_NEXT>, <&kp C_PREV>;
 )
 
-	
+	*/
 
 ZMK_BEHAVIOR(hmr, hold_tap,
     flavor = "balanced";
@@ -83,4 +83,4 @@ ZMK_BEHAVIOR(hmr, hold_tap,
     require-prior-idle-ms = <150>;
     bindings = <&kp>, <&kp>;
     hold-trigger-on-release;
-) */
+) 
