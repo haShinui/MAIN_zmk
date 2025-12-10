@@ -96,7 +96,18 @@
 
     
 
-    combos { compatible = "zmk,combos"; };
+    combos { compatible = "zmk,combos"; 
+
+        esc_q_combo: esc_q_combo {
+            timeout-ms = <50>;
+            key-positions = <0 1>; // positions of the keys in the matrix
+            bindings = <&kp ESC>;  // what combo sends
+        };
+
+    };
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
