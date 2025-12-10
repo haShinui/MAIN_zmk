@@ -94,6 +94,12 @@
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 			tap-ms = <55>;
 		};
+        Test: Test {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "TAB_SWITCHING";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp W>, <&kp Q>;
+        };
         
     };
 
@@ -137,7 +143,7 @@
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                             &trans        &trans          &trans
             >;
 
-            sensor-bindings = <&Tab_switching>;
+            sensor-bindings = <&Test>;
         };
 
         Fn_layer {
