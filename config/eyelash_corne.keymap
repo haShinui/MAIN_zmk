@@ -96,14 +96,14 @@
 			tap-ms = <65>;
 		};
 
-         mt: deae {
+         /*deae: deae {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&de_ae>, <&kp LC(X)>;
             display-name = "Mod-Tap";
-        };
+        }; 
 
         test: test {
             compatible = "zmk,behavior-hold-tap";
@@ -112,7 +112,8 @@
             tapping-term-ms = <200>;
             bindings = <&de_ae>, <&BT_SEL 1>;
             display-name = "Mod-Tap";
-        };
+        }; */
+
     
         
     };
