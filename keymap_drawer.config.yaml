@@ -174,22 +174,22 @@ parse_config:
       tap: 'P'
       shifted: $$mdi:content-copy$$
     # Mouse
-    #"&msc SCRL_UP":
-     # tap: $$mdi:pan-up$$
-     # hold: ''
-      #shifted: ''
-    #"&msc SCRL_DOWN":
-     # tap: $$mdi:pan-down$$
-     # hold: ''
-     # shifted: ''
-    #"&msc SCRL_LEFT":
-     # tap: $$mdi:pan-left$$
-     # hold: ''
-     # shifted: ''
-    #"&msc SCRL_RIGHT":
-      #tap: $$mdi:pan-right$$
-      #hold: ''
-      #shifted: ''
+    "&msc SCRL_UP":
+      tap: $$mdi:pan-up$$
+      hold: ''
+      shifted: ''
+    "&msc SCRL_DOWN":
+      tap: $$mdi:pan-down$$
+      hold: ''
+      shifted: ''
+    "&msc SCRL_LEFT":
+      tap: $$mdi:pan-left$$
+      hold: ''
+      shifted: ''
+    "&msc SCRL_RIGHT":
+      tap: $$mdi:pan-right$$
+      hold: ''
+      shifted: ''
     "&mmv MOVE_LEFT":
       tap: $$mdi:menu-left$$
       hold: ''
