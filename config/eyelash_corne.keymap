@@ -22,8 +22,8 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20   // 10
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 5000  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 600    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 3500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 400    // default: 10
  
 
 &mmv {
@@ -88,7 +88,7 @@
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <60>;
+			tap-ms = <65>;
 		};
     
         
@@ -130,7 +130,7 @@
             bindings = <
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp NUMBER_4  &kp N5                                           &msc SCRL_UP                     &kp NUMBER_6  &kp N7          &kp N8        &kp N9         &kp N0     &kp BSPC
 &kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                        &msc SCRL_LEFT   &kp LG(F)     &msc SCRL_RIGHT    &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
-&trans     &kp DOT       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp FSLH      &sk LEFT_ALT    &kp LG(TAB)                      &msc SCRL_DOWN                   &sl 3         &kp C_AC_HOME   &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &kp ENTER
+&trans     &kp DOT       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp FSLH      &sk LEFT_ALT    &kp LG(TAB)                      &msc SCRL_DOWN                   &sl 3         &kp C_AC_HOME   &kp PSCRN     &trans  &kp END    &kp ENTER
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                                    &trans        &trans          &trans
             >;
 
