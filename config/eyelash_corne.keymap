@@ -129,7 +129,7 @@
             display-name = "SYMBOLs";
             bindings = <
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp NUMBER_4  &kp N5                                           &msc SCRL_UP                     &kp NUMBER_6  &kp N7          &kp N8        &kp N9         &kp N0     &kp BSPC
-&kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                        &msc SCRL_LEFT   kp LG(F)     &msc SCRL_RIGHT     &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
+&kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                        &msc SCRL_LEFT   &kp LG(F)     &msc SCRL_RIGHT    &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
 &trans     &kp DOT       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp FSLH      &sk LEFT_ALT    &kp LG(TAB)                      &msc SCRL_DOWN                   &sl 3         &kp C_AC_HOME   &kp PAGE_UP   &kp PAGE_DOWN  &kp END    &kp ENTER
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                                    &trans        &trans          &trans
             >;
