@@ -17,12 +17,12 @@
 
 /* Mouse input processing */
 
-/*#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 40   // 10
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 110
-#define ZMK_MOUSE_SCRL_VAL 140 */
+#define ZMK_MOUSE_SCRL_VAL 140 
 
 &mmv {
   acceleration-exponent = <1>;      // 1
