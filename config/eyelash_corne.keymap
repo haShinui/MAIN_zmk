@@ -134,7 +134,7 @@
                                                &sk LCTRL              &sk LEFT_GUI  &sk LEFT_SHIFT                                                             &trans        &trans          &trans
             >;
 
-            sensor-bindings = <&>;
+            sensor-bindings = <&Tab_switching>;
         };
 
         Fn_layer {
