@@ -22,7 +22,7 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 300   // 10
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 110
-#define ZMK_MOUSE_SCRL_VAL 140 
+#define ZMK_MOUSE_SCRL_VAL 1000
 
 &mmv {
   acceleration-exponent = <1>;      // 1
