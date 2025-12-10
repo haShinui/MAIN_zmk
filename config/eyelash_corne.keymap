@@ -102,7 +102,7 @@
             timeout-ms = <50>;
             key-positions = <0 1>; // positions of the keys in the matrix
             bindings = <&kp ESC>;  // what combo sends
-            layers = <0>;
+            layers = <0 4>;
         };
 
     };
