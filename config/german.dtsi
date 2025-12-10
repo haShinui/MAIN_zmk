@@ -90,6 +90,5 @@ ZMK_BEHAVIOR(deae, hold_tap,
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;
     require-prior-idle-ms = <150>;
-    bindings = <&de_ae>, <&kp LC(X)>>;
-
+    bindings = <&de_ae>, <&kp LC(X)>;
 ) 
