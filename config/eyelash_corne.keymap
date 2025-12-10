@@ -53,7 +53,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "TAB_SWITCHING";
             #sensor-binding-cells = <0>;
-            bindings = <&kp Lc(LA(TAB))>, <&kp LC(LA(LEFT_SHIFT(TAB)))>;   
+            bindings = <&kp LC(LA(TAB))>, <&kp LC(LA(LEFT_SHIFT(TAB)))>;   
         };
 
         App_switching: App_switching {
