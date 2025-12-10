@@ -17,12 +17,12 @@
 
 /* Mouse input processing */
 
-#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+/*#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 40   // 10
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 110
-#define ZMK_MOUSE_SCRL_VAL 140
+#define ZMK_MOUSE_SCRL_VAL 140 */
 
 &mmv {
   acceleration-exponent = <1>;      // 1
@@ -85,14 +85,14 @@
 			compatible = "zmk,behavior-sensor-rotate-var";
 			#sensor-binding-cells = <2>;
 			bindings = <&msc>, <&msc>;
-			tap-ms = <70>;
+			tap-ms = <60>;
 		};
 
         scroll_test: scroll_test {
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
 			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-			tap-ms = <70>;
+			tap-ms = <60>;
 		};
         
     };
