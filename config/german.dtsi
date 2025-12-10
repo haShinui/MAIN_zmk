@@ -73,7 +73,6 @@ ZMK_BEHAVIOR(tap_mu, tap_dance,
     bindings = <&kp C_NEXT>, <&kp C_PREV>;
 )
 
-ZMK_COMBO(layer_3,  &tog 3, 0 1, ALL, 25)
 	
 
 ZMK_BEHAVIOR(hmr, hold_tap,
