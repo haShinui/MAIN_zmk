@@ -20,7 +20,7 @@
 
 #include "german.dtsi"
 
-/* Mouse input processing */
+/* Mouse input processing  1*/
 
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
