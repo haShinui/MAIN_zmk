@@ -1,8 +1,7 @@
 // #define HOST_OS 1
+#include "zmk-helpers/helper.h"
 #include <behaviors.dtsi>
 #include <behaviors/unicode.dtsi>
-#include "zmk-helpers/helper.h"
-
 // Source unicode-chars for desired languages
 #include "zmk-helpers/german.dtsi"
 
@@ -15,7 +14,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/behaviors.h>
-// #include <zmk-unicode/keys-extra.h>  // All glyphs except CJK
+#include <zmk-unicode/keys-extra.h>  // All glyphs except CJK
 
 
 #include <input/processors.dtsi>
@@ -45,11 +44,11 @@
   delay-ms = <0>;                   // 0
 };
 
-/* &uc {
+ &uc {
   // default-mode = <UC_MODE_WIN_COMPOSE>;  // Replace with desired input system.
   default-mode = <UC_MODE_LINUX>;
   minimum-length = <0>; 
-}; */
+}; 
 
 / {
     behaviors {
