@@ -1,5 +1,11 @@
-build/
-zmk/
-modules/
-tools/
-.west/
+flags.h
+*secret*
+.DS_Store
+.vscode
+zmk
+!src/zmk
+build
+build.log
+.venv/
+.gemini/
+tmp/
