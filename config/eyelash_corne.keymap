@@ -16,7 +16,7 @@
 #include <dt-bindings/zmk/behaviors.h>
 
 #include <zmk-unicode/keys.h>  // All glyphs except CJK
-
+#include <dt-bindings/zmk-unicode/uc.h>
 
 #include <input/processors.dtsi>
 
