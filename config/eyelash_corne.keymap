@@ -175,7 +175,7 @@
         };
 
         raise_layer {
-            display-name = "SYMBOLs";
+            display-name = "SYMBOLS";
             bindings = <
 &kp GRAVE  &kp NUMBER_1  &kp NUMBER_2          &kp NUMBER_3           &kp NUMBER_4  &kp N5                                           &msc SCRL_UP                     &kp NUMBER_6  &kp N7          &kp N8        &kp N9         &kp N0     &kp BSPC
 &kp MINUS  &kp EQUAL     &kp LBKT              &kp RBKT               &kp BSLH      &kp APOS                        &msc SCRL_LEFT   &kp LG(F)     &msc SCRL_RIGHT    &kp LC(LEFT)  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN       &kp RIGHT  &kp LC(RIGHT)
@@ -199,6 +199,7 @@
         };
 
         QWERTY {
+            display-name = "QWERTY";
             bindings = <
 &kp ESC    &kp Q  &kp W  &kp E      &kp R      &kp T                                         &kp UP_ARROW                     &kp Y   &kp U      &kp I      &kp O    &kp P     &kp BSPC
 &kp TAB    &kp A  &kp S  &kp D      &kp F      &kp G                         &kp LEFT_ARROW  &kp ENTER       &kp RIGHT_ARROW  &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp FSLH
