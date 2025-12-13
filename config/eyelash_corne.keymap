@@ -1,7 +1,10 @@
+// #define HOST_OS 1
+#include "zmk-helpers/helper.h"
 #include <behaviors.dtsi>
-#include <behaviors/unicode.dtsi> // for zmk-unicode
+#include <behaviors/unicode.dtsi>
+// Source unicode-chars for desired languages
+#include "zmk-helpers/german.dtsi"
 
-/* ----- For default ZMK behavior ---- */
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
@@ -12,15 +15,16 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/behaviors.h>
 
-/* ----- Extra zmk modules ---- */
+// #include <zmk-unicode/keys.h>  // All glyphs except CJK
+// #include <dt-bindings/zmk-unicode/uc.h>
 #include <zmk-unicode/keys-extra.h>
-#include "zmk-helpers/helper.h"
+
 #include <input/processors.dtsi>
-#include "zmk-helpers/german.dtsi"
+
 #include "german.dtsi"
 
+/* Mouse input processing  1*/
 
-/* Mouse input processing default values*/
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1000  // 600
@@ -28,7 +32,6 @@
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 400    // default: 10
- 
 
 &mmv {
   acceleration-exponent = <1>;      // 1
