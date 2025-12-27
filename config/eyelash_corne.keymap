@@ -27,18 +27,18 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20   // 10
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 3500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 400    // default: 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // default: 10
  
 
 &mmv {
   acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <400>;     // 300
+  time-to-max-speed-ms = <500>;     // 300
   delay-ms = <0>;                   // 0
 };
 
 &msc {
   acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <50>;     // 300
+  time-to-max-speed-ms = <150>;     // 300
   delay-ms = <0>;                   // 0
 };
 
@@ -121,7 +121,13 @@
             key-positions = <0 1>; // positions of the keys in the matrix
             bindings = <&kp ESC>;  // what combo sends
             layers = <0 4>;
-        };
+        };  
+        enter_combo: enter_combo {
+            timeout-ms = <50>;
+            key-positions = <0 1>; // positions of the keys in the matrix
+            bindings = <&kp ENTER>;  // what combo sends
+            layers = <13 14>;
+        }; 
 
     };
 
