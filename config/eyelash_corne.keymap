@@ -124,9 +124,9 @@
         };  
         enter_combo: enter_combo {
             timeout-ms = <50>;
-            key-positions = <0 1>; // positions of the keys in the matrix
+            key-positions = <13 14>; // positions of the keys in the matrix
             bindings = <&kp ENTER>;  // what combo sends
-            layers = <13 14>;
+
         }; 
 
     };
