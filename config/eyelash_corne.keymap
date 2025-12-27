@@ -130,8 +130,8 @@
 
         shift: shift {
             timeout-ms = <50>;
-            key-positions = <26 27>; // positions of the keys in the matrix
-            bindings = <&kp ENTER>;  // what combo sends
+            key-positions = <28 29>; // positions of the keys in the matrix
+            bindings = <&kp LEFT_SHIFT>;  // what combo sends
             layers = <0>;
 
         };  
@@ -193,8 +193,8 @@
             display-name = "FUNCTIONS";
             bindings = <
 &kp ESC        &mt LG(LS(N1)) LG(NUMBER_1)  &mt LG(LS(N2)) LG(NUMBER_2)  &mt LG(LS(N3)) LG(NUMBER_3)  &mt LG(LS(N4)) LG(NUMBER_4)  &mt LG(LS(N5)) LG(N5)                                     &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue 1 0          &bt BT_SEL 2        &bt BT_SEL 3   &win_lin 0 1
-&kp LC(F)      &deae 1 LC(X)                &mt LC(LS(C)) LC(C)          &mt LC(LS(V)) LC(V)          &kp LC(Z)                    &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous     &trans              &uc UC_DE_OE   &trans
-&trans         &kp LC(R)                    &kp LC(K)                    &kp LC(PLUS)                 &kp LC(MINUS)                &kp HOME               &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &kp HOME      &hmr PSCRN LG(P)  &trans             &trans              &trans         &trans 
+&kp LC(F)      &deae 1 LC(X)                &mt LC(LS(C)) LC(C)          &mt LC(LS(V)) LC(V)          &kp LC(Z)                    &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous     &trans              &trans         &trans
+&trans         &kp LC(R)                    &kp LC(K)                    &kp LC(MINUS)                &kp LC(PLUS)                 &kp HOME               &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &kp HOME      &kp PSCRN         &trans             &trans              &trans         &trans 
                                                                          &trans                       &trans                       &trans                                                                                     &kp LEFT_GUI  &kp BACKSPACE     &sk LEFT_SHIFT
             >;
 
