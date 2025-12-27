@@ -108,3 +108,11 @@ ZMK_BEHAVIOR(win_lin, hold_tap,
     require-prior-idle-ms = <150>;
     bindings = <&lin>, <&win>;
 ) 
+
+ZMK_BEHAVIOR(scrl, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    bindings = <&msc>, <&kp>;
+) 
