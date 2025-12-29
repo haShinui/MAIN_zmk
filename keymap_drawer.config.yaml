@@ -117,10 +117,14 @@ parse_config:
     type: trans
 
   raw_binding_map:
-    '&deae':  {s: "", h: "Ä", t: "CUT"}
-    '&deoe': "Ö"
+
+    # Function Layer   Example: '': {s: "", h: "", t: ""}
+    '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
+    '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: $$mdi:bluetooth$$, h: "Ü", t: $$mdi:numeric-2$$}
+    '&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
+    '&kp LC(F)': {s: "", h: "$$mdi:file-find-outline$$", t: ""}
+    '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$fa:regular/copy$$", t: "$$mdi:apple-keyboard-shift$$  $$fa:regular/copy$$"}
     
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 

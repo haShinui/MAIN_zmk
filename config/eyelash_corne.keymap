@@ -94,7 +94,7 @@
         scroll_encoder: scroll_encoder {
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
-			bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+			bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 			tap-ms = <65>;
 		};
 
@@ -130,7 +130,7 @@
 
         shift: shift {
             timeout-ms = <50>;
-            key-positions = <43 42>; // positions of the keys in the matrix
+            key-positions = <29 30>; // positions of the keys in the matrix
             bindings = <&sk LEFT_SHIFT>;  // what combo sends
             layers = <0>;
 
@@ -192,9 +192,9 @@
         lower_layer {   
             display-name = "FUNCTIONS";
             bindings = <
-&hmr LG(LS(S)) LG(S)    &mt LG(LS(N1)) LG(NUMBER_1)  &mt LG(LS(N2)) LG(NUMBER_2)  &mt LG(LS(N3)) LG(NUMBER_3)  &mt LG(LS(N4)) LG(NUMBER_4)  &mt LG(LS(N5)) LG(N5)                                     &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue 1 0          &bt BT_SEL 2        &bt BT_SEL 3   &win_lin 0 1
-&kp LC(F)               &deae 1 LC(X)                &mt LC(LS(C)) LC(C)          &mt LC(LS(V)) LC(V)          &kp LC(Z)                    &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous     &trans              &trans         &trans
-&trans                  &kp LC(R)                    &kp LC(K)                    &kp LC(MINUS)                &kp LC(PLUS)                 &kp HOME               &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &kp HOME      &kp PSCRN         &trans             &trans              &trans         &trans 
+&hmr LG(LS(S)) LG(S)    &hmr LG(LS(N1)) LG(NUMBER_1)  &hmr LG(LS(N2)) LG(NUMBER_2)  &hmr LG(LS(N3)) LG(NUMBER_3)   &hmr LG(LS(N4)) LG(NUMBER_4)   &hmr LG(LS(N5)) LG(N5)                                    &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue 1 0          &bt BT_SEL 2        &bt BT_SEL 3   &win_lin 0 1
+&kp LC(F)               &deae 1 LC(X)                 &hmr LC(LS(C)) LC(C)          &hmr LC(LS(V)) LC(V)           &kp LC(Z)                      &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous     &trans              &de_oe         &trans
+&trans                  &kp LC(R)                     &kp LC(K)                     &kp LC(MINUS)                  &kp LC(PLUS)                   &kp HOME               &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &kp HOME      &kp PSCRN         &trans             &trans              &trans         &trans 
                                                                          &trans                       &trans                       &trans                                                                                     &kp LEFT_GUI  &kp BACKSPACE     &sk LEFT_SHIFT
             >;
 
@@ -218,7 +218,7 @@
             bindings = <
 &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                     &trans          &kp F6      &kp F7            &kp F8          &kp F9  &kp F10  &kp F11
 &trans   &trans  &trans  &trans  &trans  &trans                             &trans  &trans  &trans  &kp C_MUTE  &kp C_PLAY_PAUSE  &next_previous  &trans  &trans   &tog 4
-&trans   &trans  &trans  &trans  &trans  &trans  &mt C_NEXT C_PLAY_PAUSE            &trans          &trans      &trans            &trans          &trans  &trans   &trans
+&trans   &trans  &trans  &trans  &trans  &trans  &hmr C_NEXT C_PLAY_PAUSE            &trans          &trans      &trans            &trans          &trans  &trans   &trans
                          &trans  &trans  &trans                                                     &trans      &trans            &trans
             >;
 
