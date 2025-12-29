@@ -26,6 +26,7 @@
 ### *Note*
 When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), after pushing you need to **reconfigure .keymap** file and put **german.dtsi** at the bottom of the other includes
 example
+**Costum SVG**: Should be done with [this](https://pixelied.com/home). Here can combine 2 svg in 1.
 ```
 #define HOST_OS 1
 #include <behaviors.dtsi>
