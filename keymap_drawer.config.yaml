@@ -138,7 +138,7 @@ parse_config:
     '&deue': {s: "Ü", h: "ü", t: "$$shift_copy$$"}
     #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
-    '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$fa:brands/apple$$"}
+    '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
     
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
