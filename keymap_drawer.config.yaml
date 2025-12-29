@@ -114,6 +114,19 @@ draw_config:
         <path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-12, -12)" d="M 15 18 V 12 H 17.17 L 12 6.83 L 6.83 12 H 9 V 18 H 15 M 12 4 L 22 14 H 17 V 20 H 7 V 14 H 2 L 12 4 Z" stroke-linecap="round"/>
         </g>
       </svg>
+    2_bluetooth : |
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="940" height="788" viewBox="0 0 940 788" xml:space="preserve">
+        <desc>Created with Fabric.js 3.5.0</desc>
+        <defs>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+        <g transform="matrix(1 0 0 1 251.0574 450.1346)" style="" id="744513">
+            
+        <path xml:space="preserve" font-family="Lato" font-size="612" font-style="normal" font-weight="bold" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" d="M0.36-255.12L0.36-255.12Q30.96-255.12 56.36-246.09Q81.75-237.06 99.81-220.54Q117.86-204.02 127.96-180.76Q138.06-157.50 138.06-129.05L138.06-129.05Q138.06-104.57 130.87-83.76Q123.67-62.95 111.59-43.98Q99.50-25.01 83.28-7.26Q67.06 10.49 49.32 28.85L49.32 28.85L-50.44 130.75Q-35.75 126.46-21.67 124.17Q-7.60 121.87 5.25 121.87L5.25 121.87L118.78 121.87Q131.02 121.87 138.21 128.76Q145.40 135.64 145.40 146.97L145.40 146.97L145.40 192.25L-158.15 192.25L-158.15 167.16Q-158.15 159.51-154.94 151.25Q-151.72 142.99-144.69 135.95L-144.69 135.95L-10.35 1.31Q6.48-15.83 19.79-31.43Q33.10-47.04 42.13-62.34Q51.15-77.64 55.90-93.40Q60.64-109.16 60.64-126.60L60.64-126.60Q60.64-142.51 56.05-154.60Q51.46-166.68 42.89-174.95Q34.32-183.21 22.54-187.34Q10.76-191.47-3.93-191.47L-3.93-191.47Q-31.16-191.47-48.76-177.70Q-66.35-163.93-73.39-140.67L-73.39-140.67Q-76.75-129.05-83.49-124.00Q-90.22-118.95-100.62-118.95L-100.62-118.95Q-105.21-118.95-110.72-119.87L-110.72-119.87L-150.50-126.90Q-145.91-158.73-132.75-182.75Q-119.59-206.77-99.86-222.84Q-80.12-238.90-54.57-247.01Q-29.02-255.12 0.36-255.12Z"/></g>
+        <g transform="matrix(22.6514 0 0 22.6514 664.7828 420.4343)" id="777287">
+        <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-11.355, -12)" d="M 14.88 16.29 L 13 18.17 V 14.41 M 13 5.83 L 14.88 7.71 L 13 9.58 M 17.71 7.71 L 12 2 H 11 V 9.58 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.58 L 6.41 19 L 11 14.41 V 22 H 12 L 17.71 16.29 L 13.41 12 L 17.71 7.71 Z" stroke-linecap="round"/>
+        </g>
+      </svg>
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
@@ -135,7 +148,7 @@ parse_config:
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: "Ü", h: "ü", t: "$$shift_copy$$"}
+    '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
     #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
     '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
