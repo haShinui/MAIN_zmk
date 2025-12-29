@@ -24,8 +24,8 @@ layers:
   - {t: LGUI, h: '$$mdi:gesture-tap-hold$$'}
   - $$mdi:arrow-right-bold$$
   - M
-  - {t: N, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: E, h: CTRL}
+  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: E, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: I, h: ALT}
   - {t: O, h: GUI}
   - {t: '''', s: '"'}
@@ -50,7 +50,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
   FUNCTIONS:
-  - $$mdi:keyboard-esc$$
+  - {t: S, h: Gui+Sft+S}
   - {t: Gui+1, h: Gui+Sft+1}
   - {t: Gui+2, h: Gui+Sft+2}
   - {t: Gui+3, h: Gui+Sft+3}
@@ -59,13 +59,13 @@ layers:
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:numeric-1$$', s: '$$mdi:bluetooth$$'}
-  - {t: '$$mdi:numeric-2$$', h: Ü, s: '$$mdi:bluetooth$$'}
+  - {t: $$2_bluetooth$$, h: ü, s: Ü}
   - {t: '$$mdi:numeric-3$$', s: '$$mdi:bluetooth$$'}
   - {t: '$$mdi:numeric-4$$', s: '$$mdi:bluetooth$$'}
   - {t: '&win 1', h: '&lin'}
-  - Ctl+F
-  - {t: CUT, h: Ä}
-  - {t: Ctl+C, h: Ctl+Sft+C}
+  - $$mdi:file-find-outline$$
+  - {t: '$$mdi:content-cut$$', h: ä, s: Ä}
+  - {t: '$$mdi:content-copy$$', h: $$shift_copy$$}
   - {t: Ctl+V, h: Ctl+Sft+V}
   - Ctl+Z
   - Ctl+Y
@@ -76,13 +76,13 @@ layers:
   - PLAY PAUSE
   - {t: Next Song, h: Previous}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&uc UC_DE_OE'
+  - {t: '&de_oe_lower', s: '&de_oe_upper'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - AC CLOSE
-  - AC REFRESH
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+R
   - Ctl+K
-  - AC ZOOM IN
-  - AC ZOOM OUT
+  - {t: Ctl+-, s: Ctl+_}
+  - Ctl++
   - HOME
   - PLAY PAUSE
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
@@ -123,8 +123,8 @@ layers:
   - $$mdi:pan-right$$
   - Ctl+$$mdi:arrow-left-bold$$
   - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-down-bold$$
+  - {t: '$$mdi:arrow-up-bold$$', h: '&msc MOVE_Y(40)'}
+  - {t: '$$mdi:arrow-down-bold$$', h: '&msc MOVE_Y(-40)'}
   - $$mdi:arrow-right-bold$$
   - Ctl+$$mdi:arrow-right-bold$$
   - {t: ',', s: <}
@@ -135,9 +135,9 @@ layers:
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
   - Gui+$$mdi:keyboard-tab$$
   - $$mdi:pan-down$$
-  - {t: FN, h: '$$mdi:gesture-tap-hold$$'}
   - HOME
-  - $$mdi:printer-outline$$
+  - {t: Gui+P, h: '$$mdi:printer-outline$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - END
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -184,7 +184,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: PLAY PAUSE, h: '$$mdi:skip-next$$'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -193,7 +193,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   QWERTY:
@@ -214,7 +214,7 @@ layers:
   - A
   - S
   - D
-  - {t: F, h: '$$mdi:apple-keyboard-option$$'}
+  - F
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -249,3 +249,8 @@ combos:
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
   l: [BASE, QWERTY]
+- p: [13, 14]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
+- p: [29, 30]
+  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  l: [BASE]
