@@ -122,9 +122,9 @@ parse_config:
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
+    #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
     '&kp LC(F)': {s: "", h: "$$mdi:file-find-outline$$", t: ""}
-    '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$fa:regular/copy$$", t: "$$mdi:apple-keyboard-shift$$  $$fa:regular/copy$$"}
+    #'&hmr LC(LS(C)) LC(C)': {s: "", h: "$$fa:regular/copy$$", t: "$$mdi:apple-keyboard-shift$$  $$fa:regular/copy$$"}
     
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
