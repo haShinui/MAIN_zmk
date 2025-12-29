@@ -101,7 +101,7 @@ draw_config:
   glyph_hold_size: 15
   glyph_shifted_size: 15
   glyphs: 
-    vol_up: |
+    shift_copy: |
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
         <desc>Created with Fabric.js 3.5.0</desc>
         <defs>
@@ -135,10 +135,10 @@ parse_config:
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: "Ü", h: "ü", t: "$$vol_up$$"}
+    '&deue': {s: "Ü", h: "ü", t: "$$shift_copy$$"}
     #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
-    '&kp LC(F)': {s: "", h: "$$mdi:file-find-outline$$", t: ""}
-    #'&hmr LC(LS(C)) LC(C)': {s: "", h: "$$fa:regular/copy$$", t: "$$mdi:apple-keyboard-shift$$  $$fa:regular/copy$$"}
+    '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
+    '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$fa:regular/copy$$"}
     
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
