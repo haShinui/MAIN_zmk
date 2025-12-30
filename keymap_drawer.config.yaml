@@ -127,6 +127,15 @@ draw_config:
         <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-11.355, -12)" d="M 14.88 16.29 L 13 18.17 V 14.41 M 13 5.83 L 14.88 7.71 L 13 9.58 M 17.71 7.71 L 12 2 H 11 V 9.58 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.58 L 6.41 19 L 11 14.41 V 22 H 12 L 17.71 16.29 L 13.41 12 L 17.71 7.71 Z" stroke-linecap="round"/>
         </g>
       </svg>
+
+    windows : |
+      <svg viewBox="0 0 24 24">
+        <path d="M3 12V6.75L9 5.43V11.91L3 12Z" />
+        <path d="M20 3V11.75L10 11.9V5.21L20 3Z" />
+        <path d="M3 13L9 13.09V19.9L3 18.75V13Z" />
+        <path d="M20 13.25V22L10 20.09V13.1L20 13.25Z" />
+      </svg>
+
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
@@ -145,6 +154,9 @@ parse_config:
   raw_binding_map:
     # Example: '': {s: "", h: "", t: ""}   '': {s: "", h: "", t: "$$mdi:$$"}
 
+    # Basic things
+    '&kp LGUI': {s: "", h: "", t: "$$win$$"}
+    
     # Function Layer Left
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
@@ -164,9 +176,7 @@ parse_config:
     '&kp K_MUTE': {s: "", h: "", t: "$$mdi:volume-mute$$"}
     '&kp C_PLAY_PAUSE': {s: "", h: "", t: "$$mdi:play-pause$$"}
     '&next_previous': {s: "", h: "$$mdi:skip-previous$$", t: "$$mdi:skip-next$$"}
-    '&win_lin 0 1': {s: "", h: "Set language Linux", t: "Set language Windows"}
-
-    '&next_previous': {s: "", h: "Previous", t: "Next Song"}
+    '&win_lin 0 1': {s: "", h: "Linux", t: "Windows"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
     '&hmr LEFT_WIN A': {s: "", h: "GUI", t: "A"}
