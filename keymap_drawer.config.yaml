@@ -148,7 +148,7 @@ parse_config:
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: "Ü", h: "ü", t: "$$2_bluet//oot$$"}
+    '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
     #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
     '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
