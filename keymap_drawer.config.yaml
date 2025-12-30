@@ -159,10 +159,13 @@ parse_config:
     '&kp HOME': {s: "", h: "", t: "$$mdi:home$$"}
     
     #  Function Layer Right
-    '&deuo': {s: "Ü", h: "", t: "t"}
+    '&uc UC_DE_OE': {s: "Ö", h: "", t: "ö"}
     '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
     '&kp K_MUTE': {s: "", h: "", t: "$$mdi:volume-mute$$"}
-    
+    '&kp C_PLAY_PAUSE': {s: "", h: "", t: "$$mdi:play-pause$$"}
+    '&next_previous': {s: "", h: "$$mdi:skip-previous$$", t: "$$mdi:skip-next$$"}
+    '&win_lin 0 1': {s: "", h: "Set language Linux", t: "Set language Windows"}
+
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
