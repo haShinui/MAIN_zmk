@@ -21,7 +21,7 @@ layers:
   - {t: T, h: '$$mdi:apple-keyboard-control$$'}
   - G
   - $$mdi:arrow-left-bold$$
-  - {t: LGUI, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: $$windows$$, h: '$$mdi:gesture-tap-hold$$'}
   - $$mdi:arrow-right-bold$$
   - M
   - {t: N, h: '$$mdi:apple-keyboard-control$$'}
@@ -35,7 +35,7 @@ layers:
   - C
   - D
   - V
-  - PLAY PAUSE
+  - $$mdi:play-pause$$
   - $$mdi:arrow-down-bold$$
   - K
   - H
@@ -43,7 +43,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - FN
-  - LGUI
+  - $$windows$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-tab$$', h: FUNCTIONS}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
@@ -62,31 +62,31 @@ layers:
   - {t: $$2_bluetooth$$, h: ü, s: Ü}
   - {t: '$$mdi:numeric-3$$', s: '$$mdi:bluetooth$$'}
   - {t: '$$mdi:numeric-4$$', s: '$$mdi:bluetooth$$'}
-  - {t: '&win 1', h: '&lin'}
+  - {t: Windows, h: Linux}
   - $$mdi:file-find-outline$$
   - {t: '$$mdi:content-cut$$', h: ä, s: Ä}
   - {t: '$$mdi:content-copy$$', h: $$shift_copy$$}
-  - {t: Ctl+V, h: Ctl+Sft+V}
-  - Ctl+Z
-  - Ctl+Y
+  - $$mdi:content-paste$$
+  - $$mdi:undo$$
+  - '$$mdi:redo$$ '
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - MUTE
-  - PLAY PAUSE
-  - {t: Next Song, h: Previous}
+  - $$mdi:volume-mute$$
+  - $$mdi:play-pause$$
+  - {t: '$$mdi:skip-next$$', h: '$$mdi:skip-previous$$'}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '&de_oe_lower', s: '&de_oe_upper'}
+  - {t: ö, s: Ö}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Ctl+R
-  - Ctl+K
-  - {t: Ctl+-, s: Ctl+_}
-  - Ctl++
-  - HOME
-  - PLAY PAUSE
+  - $$mdi:web-refresh$$
+  - $$mdi:search-web$$
+  - $$mdi:magnify-minus-outline$$
+  - $$mdi:magnify-plus-outline$$
+  - $$mdi:home$$
+  - $$mdi:play-pause$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - HOME
+  - $$mdi:home$$
   - $$mdi:printer-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -135,7 +135,7 @@ layers:
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
   - Gui+$$mdi:keyboard-tab$$
   - $$mdi:pan-down$$
-  - HOME
+  - $$mdi:home$$
   - {t: Gui+P, h: '$$mdi:printer-outline$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -171,8 +171,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
-  - PLAY PAUSE
-  - {t: Next Song, h: Previous}
+  - $$mdi:play-pause$$
+  - {t: '$$mdi:skip-next$$', h: '$$mdi:skip-previous$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: QWERTY, h: toggle}
@@ -182,7 +182,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: PLAY PAUSE, h: '$$mdi:skip-next$$'}
+  - {t: '$$mdi:play-pause$$', h: '$$mdi:skip-next$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -231,7 +231,7 @@ layers:
   - C
   - V
   - B
-  - PLAY PAUSE
+  - $$mdi:play-pause$$
   - $$mdi:arrow-down-bold$$
   - N
   - M
@@ -239,7 +239,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: QWERTY, h: toggle}
-  - LGUI
+  - $$windows$$
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
