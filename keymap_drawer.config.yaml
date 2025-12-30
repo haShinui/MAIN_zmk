@@ -155,7 +155,7 @@ parse_config:
     # Example: '': {s: "", h: "", t: ""}   '': {s: "", h: "", t: "$$mdi:$$"}
 
     # Basic things
-    '&kp LGUI': {s: "", h: "", t: "$$win$$"}
+    '&kp LGUI': {s: "", h: "", t: "$$windows$$"}
     
     # Function Layer Left
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
@@ -175,7 +175,7 @@ parse_config:
     '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
     '&kp K_MUTE': {s: "", h: "", t: "$$mdi:volume-mute$$"}
     '&kp C_PLAY_PAUSE': {s: "", h: "", t: "$$mdi:play-pause$$"}
-    '&next_previous': {s: "", h: "test", t: "$$mdi:skip-next$$"}
+    '&next_previous': {s: "", h: "$$mdi:skip-previous$$", t: "$$mdi:skip-next$$"}
     '&win_lin 0 1': {s: "", h: "Linux", t: "Windows"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
