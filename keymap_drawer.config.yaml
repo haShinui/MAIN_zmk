@@ -144,14 +144,22 @@ parse_config:
 
   raw_binding_map:
 
-    # Function Layer   Example: '': {s: "", h: "", t: ""}
+    # Function Layer   Example: '': {s: "", h: "", t: ""}   '': {s: "", h: "", t: "$$mdi:$$"} 
     '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&deoe': "Ö/ö"
     '&studio_unlock': "ZMK\nStudio"
-    '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
+    '&deue': {s: "Ü", h: "ü", t: "$$2_bluet//oot$$"}
     #'&deue': {s: "Ü", h: "ü", t: "$$mdi:bluetooth$$ $$mdi:numeric-2$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
     '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
+    '&hmr LC(LS(V)) LC(V)': {s: "", h: "", t: "$$mdi:content-paste$$"}
+    '&kp LC(Z)': {s: "", h: "", t: "$$mdi:undo$$"}
+    '&kp LC(Y)': {s: "", h: "", t: "$$mdi:redo$$ "}
+    '&kp LC(R)': {s: "", h: "", t: "$$mdi:web-refresh$$"}
+    '&kp LC(K)': {s: "", h: "", t: "$$mdi:search-web$$"}
+    '&kp LC(MINUS)': {s: "", h: "", t: "$$mdi:magnify-minus-outline$$"}
+    '&kp LC(PLUS)': {s: "", h: "", t: "$$mdi:magnify-plus-outline$$"}
+    '&kp HOME': {s: "", h: "", t: "$$mdi:home$$"}
     
     '&next_previous': {s: "", h: "Previous", t: "Next Song"}
 
