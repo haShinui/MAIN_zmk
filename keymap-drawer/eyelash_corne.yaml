@@ -83,7 +83,7 @@ layers:
   - $$mdi:search-web$$
   - $$mdi:magnify-minus-outline$$
   - $$mdi:magnify-plus-outline$$
-  - $$mdi:home$$
+  - {t: '$$mdi:skip-next$$', h: '$$mdi:skip-previous$$'}
   - $$mdi:play-pause$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:home$$
