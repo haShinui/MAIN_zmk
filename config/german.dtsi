@@ -61,7 +61,7 @@ ZMK_BEHAVIOR(deue, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&bt BT_SEL 1>, <&de_ue>;
 )
-
+f
 */
 
 ZMK_BEHAVIOR(tap_ct, tap_dance,
@@ -124,5 +124,3 @@ ZMK_BEHAVIOR(scrl, hold_tap,
     require-prior-idle-ms = <150>;
     bindings = <&msc>, <&kp>;
 ) 
-
-
