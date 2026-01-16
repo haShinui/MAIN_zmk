@@ -139,6 +139,12 @@
     };
 
     macros {
+        bt2: bt2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>;
+            label = "BT2";
+        };
         bt1: bt1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -156,6 +162,12 @@
             #binding-cells = <0>;
             bindings = <&uc UC_DE_UE>;
             label = "ue";
+        };
+        oe: oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc UC_DE_OE>;
+            label = "uoee";
         };
         win: win {
             compatible = "zmk,behavior-macro";
@@ -180,10 +192,10 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp BACKSPACE  &kp Q            &kp W            &kp F              &kp P              &kp B                                 &kp UP_ARROW              &kp J        &kp L               &kp U                 &kp Y             &kp SEMI          &kp DELETE
-&key_repeat    &hmr LEFT_WIN A  &hmr LEFT_ALT R  &hmr LEFT_SHIFT S  &hmr LCTRL T       &kp G                       &kp LEFT  &sk LGUI     &kp RIGHT    &kp M        &hmr RCTRL N        &hmr RIGHT_SHIFT E    &hmr RIGHT_ALT I  &hmr RIGHT_WIN O  &kp SQT
-&tap_layer     &kp Z            &kp X            &kp C              &kp D              &kp V      &kp C_PLAY_PAUSE           &kp DOWN                  &kp K        &kp H               &kp COMMA             &kp DOT           &kp FSLH          &mo 3
-                                                 &kp LGUI           &kp SPACE          &lt 1 TAB                                                       &lt 2 ENTER  &kp BACKSPACE       &sk LEFT_SHIFT
+&kp BACKSPACE  &kp B            &kp L            &kp D              &kp W              &kp Z                                 &kp UP_ARROW              &hmr UNDER APOS      &kp F               &kp O                 &kp U                 &kp J               &hmr SEMI COLON
+&key_repeat    &hmr LEFT_WIN N  &hmr LEFT_ALT R  &hmr LEFT_SHIFT T  &hmr LCTRL S       &kp G                       &kp LEFT  &sk LGUI     &kp RIGHT    &kp Y                &hmr RCTRL H        &hmr RIGHT_SHIFT A    &hmr RIGHT_ALT E      &hmr RIGHT_WIN I    &hmr COMMA QUESTION
+&tap_layer     &kp Q            &kp X            &kp M              &kp C              &kp V      &kp C_PLAY_PAUSE           &kp DOWN                  &kp K                &kp P               &hmr GT DOT           &kp MINUS SEMI        &kp LT SLASH        &mo 3
+                                                 &kp LGUI           &kp SPACE          &lt 1 TAB                                                       &lt 2 ENTER          &kp BACKSPACE       &sk LEFT_SHIFT
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -192,9 +204,9 @@
         lower_layer {   
             display-name = "FUNCTIONS";
             bindings = <
-&hmr LG(LS(S)) LG(S)    &hmr LG(LS(N1)) LG(NUMBER_1)  &hmr LG(LS(N2)) LG(NUMBER_2)  &hmr LG(LS(N3)) LG(NUMBER_3)   &hmr LG(LS(N4)) LG(NUMBER_4)   &hmr LG(LS(N5)) LG(N5)                                    &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0      &deue 1 0          &bt BT_SEL 2        &bt BT_SEL 3   &win_lin 0 1
-&kp LC(F)               &deae 1 LC(X)                 &hmr LC(LS(C)) LC(C)          &hmr LC(LS(V)) LC(V)           &kp LC(Z)                      &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &kp C_PLAY_PAUSE  &next_previous     &trans              &uc UC_DE_OE         &trans
-&trans                  &kp LC(R)                     &kp LC(K)                     &kp LC(MINUS)                  &kp LC(PLUS)                   &next_previous        &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                   &kp HOME      &kp PSCRN         &trans             &trans              &trans         &trans 
+&hmr LG(LS(S)) LG(S)    &hmr LG(LS(N1)) LG(NUMBER_1)  &hmr LG(LS(N2)) LG(NUMBER_2)  &hmr LG(LS(N3)) LG(NUMBER_3)   &hmr LG(LS(N4)) LG(NUMBER_4)   &hmr LG(LS(N5)) LG(N5)                                    &mmv MOVE_UP                     &bt BT_CLR    &bt BT_SEL 0             &deoe 1 0          &deue 1 0           &bt BT_SEL 3   &win_lin 0 1
+&kp LC(F)               &kp LC(X)                     &hmr LC(LS(C)) LC(C)          &hmr LC(LS(V)) LC(V)           &kp LC(Z)                      &kp LC(Y)                                 &mmv MOVE_LEFT  &mkp LCLK    &mmv MOVE_RIGHT     &kp K_MUTE    &deae 1 C_PLAY_PAUSE     &next_previous     &trans              &uc UC_DE_OE         &trans
+&trans                  &kp LC(R)                     &kp LC(K)                     &kp LC(MINUS)                  &kp LC(PLUS)                   &next_previous        &kp C_PLAY_PAUSE                   &mmv MOVE_DOWN                    &kp HOME      &kp PSCRN                &trans             &trans              &trans         &trans 
                                                                          &trans                       &trans                       &trans                                                                                     &kp LEFT_GUI  &kp BACKSPACE     &sk LEFT_SHIFT
             >;
 

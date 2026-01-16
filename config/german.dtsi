@@ -98,7 +98,15 @@ ZMK_BEHAVIOR(deue, hold_tap,
     tapping-term-ms = <280>;
     quick-tap-ms = <175>;
     require-prior-idle-ms = <150>;
-    bindings = <&ue>, <&bt1>;
+    bindings = <&ue>, <&bt2>;
+) 
+
+ZMK_BEHAVIOR(deoe, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    bindings = <&oe>, <&bt1>;
 ) 
 
 ZMK_BEHAVIOR(win_lin, hold_tap,
@@ -116,3 +124,16 @@ ZMK_BEHAVIOR(scrl, hold_tap,
     require-prior-idle-ms = <150>;
     bindings = <&msc>, <&kp>;
 ) 
+
+
+
+// Tap: comma | Shift + tap: semicolon | Ctrl + shift + tap: <.
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
+SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
+
+// Tap: dot | Shift + tap: colon | Ctrl + shift + tap: >.
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
+SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+
+// Tap: qmark | Shift + tap: excl.
+SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
