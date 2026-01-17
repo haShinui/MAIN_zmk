@@ -123,14 +123,14 @@
 
         enter_combo: enter_combo {
             timeout-ms = <50>;
-            key-positions = <13 14>; // positions of the keys in the matrix
+            key-positions = <15 16>; // positions of the keys in the matrix
             bindings = <&kp ENTER>;  // what combo sends
 
         };
 
         shift: shift {
             timeout-ms = <50>;
-            key-positions = <29 30>; // positions of the keys in the matrix
+            key-positions = <17 16>; // positions of the keys in the matrix
             bindings = <&sk LEFT_SHIFT>;  // what combo sends
             layers = <0>;
 
