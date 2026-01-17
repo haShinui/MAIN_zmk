@@ -136,6 +136,20 @@ draw_config:
         <path d="M20 13.25V22L10 20.09V13.1L20 13.25Z" />
       </svg>
 
+    3_bluetooth : |
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="940" height="788" viewBox="0 0 940 788" xml:space="preserve">
+        <desc>Created with Fabric.js 3.5.0</desc>
+        <defs>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+        <g transform="matrix(1 0 0 1 340.3705 434.3044)" style="" id="618394">
+            
+        <path xml:space="preserve" font-family="Abel" font-size="509" font-style="normal" font-weight="normal" style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1; white-space: pre;" d="M95.06 77.38L95.06 77.38Q95.06 95.53 88.23 111.43Q81.39 127.34 69.46 139.27Q57.53 151.20 41.63 158.03Q25.72 164.87 7.58 164.87L7.58 164.87L-7.58 164.87Q-25.73 164.87-41.76 158.03Q-57.79 151.20-69.72 139.27Q-81.65 127.34-88.48 111.43Q-95.31 95.53-95.31 77.38L-95.31 77.38L-95.31 68.19L-63.25 63.22L-63.25 77.38Q-63.25 89.31-58.78 99.63Q-54.31 109.94-46.48 117.77Q-38.65 125.60-28.33 130.07Q-18.02 134.55-6.09 134.55L-6.09 134.55L6.09 134.55Q18.02 134.55 28.33 130.07Q38.65 125.60 46.35 117.77Q54.05 109.94 58.53 99.63Q63.00 89.31 63.00 77.38L63.00 77.38L63.00 47.81Q63.00 35.88 58.53 25.56Q54.05 15.25 46.35 7.55Q38.65-0.16 28.33-4.63Q18.02-9.11 6.09-9.11L6.09-9.11L-17.77-9.11L-17.77-39.68L6.09-39.68Q18.02-39.68 28.33-44.15Q38.65-48.62 46.35-56.33Q54.05-64.03 58.53-74.35Q63.00-84.66 63.00-96.59L63.00-96.59L63.00-113.99Q63.00-125.92 58.53-136.23Q54.05-146.55 46.35-154.25Q38.65-161.96 28.33-166.43Q18.02-170.90 6.09-170.90L6.09-170.90L-6.09-170.90Q-18.02-170.90-28.33-166.43Q-38.65-161.96-46.48-154.25Q-54.31-146.55-58.78-136.23Q-63.25-125.92-63.25-113.99L-63.25-113.99L-63.25-99.57L-95.31-104.79L-95.31-113.99Q-95.31-132.13-88.48-148.04Q-81.65-163.94-69.72-175.87Q-57.79-187.80-41.76-194.64Q-25.73-201.47-7.58-201.47L-7.58-201.47L7.58-201.47Q25.72-201.47 41.63-194.64Q57.53-187.80 69.46-175.87Q81.39-163.94 88.23-148.04Q95.06-132.13 95.06-113.99L95.06-113.99L95.06-101.81Q95.06-89.13 91.71-77.58Q88.35-66.02 82.26-56.08Q76.17-46.14 67.72-38.06Q59.27-29.98 48.84-24.27L48.84-24.27Q59.27-18.80 67.72-10.72Q76.17-2.64 82.26 7.30Q88.35 17.24 91.71 28.80Q95.06 40.35 95.06 53.03L95.06 53.03L95.06 77.38Z"/></g>
+        <g transform="matrix(21.8616 0 0 21.8616 661.382 421.4782)" id="166720">
+        <path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-11.355, -12)" d="M 14.88 16.29 L 13 18.17 V 14.41 M 13 5.83 L 14.88 7.71 L 13 9.58 M 17.71 7.71 L 12 2 H 11 V 9.58 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.58 L 6.41 19 L 11 14.41 V 22 H 12 L 17.71 16.29 L 13.41 12 L 17.71 7.71 Z" stroke-linecap="round"/>
+        </g>
+      </svg>
+
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
@@ -158,9 +172,10 @@ parse_config:
     '&kp LGUI': {s: "", h: "", t: "$$windows$$"}
     
     # Function Layer Left
-    '&deae':  {s: "Ä", h: "ä", t: "$$mdi:content-cut$$"}
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
     '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
+    '&kp LC(X)': {s: "", h: "", t: "$$mdi:content-cut$$"}
+    '&hmr LG(LS(S)) LG(S)': {s: "", h: "Shift+Gui+S", t: "Gui+S"}
     '&hmr LC(LS(V)) LC(V)': {s: "", h: "", t: "$$mdi:content-paste$$"}
     '&kp LC(Z)': {s: "", h: "", t: "$$mdi:undo$$"}
     '&kp LC(Y)': {s: "", h: "", t: "$$mdi:redo$$ "}
@@ -171,6 +186,8 @@ parse_config:
     '&kp HOME': {s: "", h: "", t: "$$mdi:home$$"}
     
     #  Function Layer Right
+    '&deoe': {s: "Ö", h: "ö", t: "$$3_bluetooth$$"}
+    '&deae':  {s: "Ä", h: "ä", t: "$$mdi:play-pause$$"}
     '&uc UC_DE_OE': {s: "Ö", h: "", t: "ö"}
     '&deue': {s: "Ü", h: "ü", t: "$$2_bluetooth$$"}
     '&kp K_MUTE': {s: "", h: "", t: "$$mdi:volume-mute$$"}
