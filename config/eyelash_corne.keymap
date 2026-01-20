@@ -95,14 +95,7 @@
 			compatible = "zmk,behavior-sensor-rotate";
 			#sensor-binding-cells = <0>;
 			bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-			tap-ms = <75>;
-		};
-
-        volume: volume {
-			compatible = "zmk,behavior-sensor-rotate";
-			#sensor-binding-cells = <0>;
-			bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_UP>;
-			tap-ms = <75>;
+			tap-ms = <62>;
 		};
 
         op: op {
@@ -269,7 +262,7 @@
                          &trans  &trans  &trans                                                     &trans      &trans            &trans
             >;
 
-            sensor-bindings = <&volume>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         QWERTY {
