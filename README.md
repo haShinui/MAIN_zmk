@@ -1,4 +1,5 @@
 # Eyelash Corne ZMK Keymap
+Switched to [Racket](https://layouts.wiki/layouts/2024/racket/) and [comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil).
 
 ## Keymap Diagram
 
