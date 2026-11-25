@@ -18,19 +18,19 @@ draw_config:
   small_pad: 2.0
   svg_extra_style: |
     /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
-
+ 
     svg.keymap {
       font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
       font-size: 12px;
       font-weight: bold;
       text-rendering: optimizeLegibility;
     }
-
+ 
     /* Color accent for held keys */
     rect.held, rect.combo.held {
         fill: #ffc;
     }
-
+ 
     /* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */
     .sym_sub_text.tap {
       translate: -5px 2px;
@@ -49,16 +49,16 @@ draw_config:
       font-size: 10px;
       opacity: 1.0;
     }
-
+ 
     /* Toggle */
     .toggle.shifted {
       translate: -10px 12px;
     }
-
+ 
     .toggle.hold {
       translate: 13px -23px;
     }
-
+ 
     /* Variant for tap-dances */
     .tap_dance.tap {
       translate: -7px 0px;
@@ -69,7 +69,7 @@ draw_config:
       font-size: 12px;
       opacity: 1.0;
     }
-
+ 
     /* Variant for symbol next to symbol */
     .sym_by_sym.tap {
       translate: -6px 0px;
@@ -78,7 +78,7 @@ draw_config:
       translate: 10px 12px;
       opacity: 1.0;
     }
-
+ 
     .combo.sym_by_sym.tap {
       translate: -35px 0px;
     }
@@ -86,16 +86,16 @@ draw_config:
       translate: 35px 20px;
       opacity: 1.0;
     }
-
+ 
     .combo.sym_by_sym.hold {
       visibility: hidden;
     }
-
+ 
     /* hide hold box for combo sym_by_sym */
     .combo.sym_by_sym.hold > path[stroke="none"][fill="none"] {
       visibility: hidden;
     }
-
+ 
   shrink_wide_legends: 6
   glyph_tap_size: 18
   glyph_hold_size: 15
@@ -114,7 +114,7 @@ draw_config:
         <path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-12, -12)" d="M 15 18 V 12 H 17.17 L 12 6.83 L 6.83 12 H 9 V 18 H 15 M 12 4 L 22 14 H 17 V 20 H 7 V 14 H 2 L 12 4 Z" stroke-linecap="round"/>
         </g>
       </svg>
-
+ 
     paste_copy: |
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1000" height="1000" viewBox="0 0 1000 1000" xml:space="preserve">
         <desc>Created with Fabric.js 3.5.0</desc>
@@ -131,7 +131,7 @@ draw_config:
         <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-12, -11)" d="M 19 20 H 5 V 4 H 7 V 7 H 17 V 4 H 19 M 12 2 A 1 1 0 0 1 13 3 A 1 1 0 0 1 12 4 A 1 1 0 0 1 11 3 A 1 1 0 0 1 12 2 M 19 2 H 14.82 C 14.4 0.84 13.3 0 12 0 C 10.7 0 9.6 0.84 9.18 2 H 5 A 2 2 0 0 0 3 4 V 20 A 2 2 0 0 0 5 22 H 19 A 2 2 0 0 0 21 20 V 4 A 2 2 0 0 0 19 2 Z" stroke-linecap="round"/>
         </g>
       </svg>
-
+ 
     2_bluetooth : |
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="940" height="788" viewBox="0 0 940 788" xml:space="preserve">
         <desc>Created with Fabric.js 3.5.0</desc>
@@ -145,7 +145,7 @@ draw_config:
         <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-11.355, -12)" d="M 14.88 16.29 L 13 18.17 V 14.41 M 13 5.83 L 14.88 7.71 L 13 9.58 M 17.71 7.71 L 12 2 H 11 V 9.58 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.58 L 6.41 19 L 11 14.41 V 22 H 12 L 17.71 16.29 L 13.41 12 L 17.71 7.71 Z" stroke-linecap="round"/>
         </g>
       </svg>
-
+ 
     windows : |
       <svg viewBox="0 0 24 24">
         <path d="M3 12V6.75L9 5.43V11.91L3 12Z" />
@@ -153,7 +153,7 @@ draw_config:
         <path d="M3 13L9 13.09V19.9L3 18.75V13Z" />
         <path d="M20 13.25V22L10 20.09V13.1L20 13.25Z" />
       </svg>
-
+ 
     3_bluetooth : |
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="940" height="788" viewBox="0 0 940 788" xml:space="preserve">
         <desc>Created with Fabric.js 3.5.0</desc>
@@ -167,7 +167,7 @@ draw_config:
         <path style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; is-custom-font: none; font-file-url: none; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-11.355, -12)" d="M 14.88 16.29 L 13 18.17 V 14.41 M 13 5.83 L 14.88 7.71 L 13 9.58 M 17.71 7.71 L 12 2 H 11 V 9.58 L 6.41 5 L 5 6.41 L 10.59 12 L 5 17.58 L 6.41 19 L 11 14.41 V 22 H 12 L 17.71 16.29 L 13.41 12 L 17.71 7.71 Z" stroke-linecap="round"/>
         </g>
       </svg>
-
+ 
   glyph_urls:
     tabler: https://unpkg.com/@tabler/icons/icons/outline/{}.svg
     tablerf: https://unpkg.com/@tabler/icons/icons/filled/{}.svg
@@ -175,17 +175,17 @@ draw_config:
     mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
     material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
   use_local_cache: true
-
+ 
 parse_config:
   mark_alternate_layer_activators: true
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
     tap: $$mdi:transfer$$
     type: trans
-
+ 
   raw_binding_map:
     # Example: '': {s: "", h: "", t: ""}   '': {s: "", h: "", t: "$$mdi:$$"}
-
+ 
     # Basic things
     '&kp LGUI': {s: "", h: "", t: "$$windows$$"}
     
@@ -193,7 +193,13 @@ parse_config:
     '&kp LC(F)': {s: "", h: "", t: "$$mdi:file-find-outline$$"}
     '&hmr LC(LS(C)) LC(C)': {s: "", h: "$$shift_copy$$", t: "$$mdi:content-copy$$"}
     '&kp LC(X)': {s: "", h: "", t: "$$mdi:content-cut$$"}
-    '&hmr LG(LS(S)) LG(S)': {s: "", h: "Shift+Gui+S", t: "Gui+S"}
+    '&hmr LG(LS(S)) LG(S)': {s: "", h: "$$mdi:monitor-screenshot$$", t: "Gui+S"}
+    # Hyprland workspaces: tap = switch to workspace N, hold = move window to workspace N
+    '&hmr LG(LS(N1)) LG(NUMBER_1)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "1"}
+    '&hmr LG(LS(N2)) LG(NUMBER_2)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "2"}
+    '&hmr LG(LS(N3)) LG(NUMBER_3)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "3"}
+    '&hmr LG(LS(N4)) LG(NUMBER_4)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "4"}
+    '&hmr LG(LS(N5)) LG(NUMBER_5)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "5"}
     '&hmr LC(LS(V)) LC(V)': {s: "", h: "paste_copy", t: "$$mdi:content-paste$$"}
     '&kp LC(Z)': {s: "", h: "", t: "$$mdi:undo$$"}
     '&kp LC(Y)': {s: "", h: "", t: "$$mdi:redo$$ "}
@@ -211,14 +217,16 @@ parse_config:
     '&kp K_MUTE': {s: "", h: "", t: "$$mdi:volume-mute$$"}
     '&kp C_PLAY_PAUSE': {s: "", h: "", t: "$$mdi:play-pause$$"}
     '&next_previous': {s: "", h: "$$mdi:skip-previous$$", t: "$$mdi:skip-next$$"}
-    '&win_lin 0 1': {s: "", h: "Linux", t: "Windows"}
-
+    '&win_lin 0 1': {s: "", h: "$$mdi:linux$$", t: "$$windows$$"}
+ 
     # Symbol Layer
     '&hmr HOME LC(LEFT)': {s: "", h: "$$mdi:arrow-left-bold-box-outline$$", t: "$$mdi:arrow-left-bold$$"}
     '&hmr END LC(RIGHT)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "$$mdi:arrow-right-bold$$"}
-
+    '&scrl MOVE_Y(40) UP_ARROW': {s: "", h: "", t: "$$mdi:arrow-up-bold$$"}
+    '&scrl MOVE_Y(-40) DOWN': {s: "", h: "", t: "$$mdi:arrow-down-bold$$"}
+ 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-
+ 
     '&hmr LEFT_WIN S': {s: "", h: "$$windows$$", t: "S"}
     '&hmr LEFT_ALT T': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "T"}
     '&hmr LEFT_SHIFT H': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "H"}
@@ -231,7 +239,13 @@ parse_config:
     # Shifted-punctuation keys on the outer column (they showed up as raw text)
     '&hmr UNDER MINUS': {s: "", h: "_", t: "-"}
     '&hmr EXCL QUESTION': {s: "", h: "!", t: "?"}
-
+ 
+    # QWERTY layer home row mods (right hand)
+    '&hmr RCTRL J': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "J"}
+    '&hmr RIGHT_SHIFT K': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "K"}
+    '&hmr RIGHT_ALT L': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "L"}
+    '&hmr RIGHT_WIN SEMICOLON': {s: "", h: "$$windows$$", t: ";"}
+ 
     
     # Layers
     "&ltq 1 BACKSPACE":
@@ -319,18 +333,18 @@ parse_config:
     "&kt RSHIFT":
       tap: $$mdi:apple-keyboard-shift$$
       hold: $$mdi:toggle-switch$$
-
+ 
     # Empty
     "&none":
       tap: $$mdi:minus-circle-outline$$
       type: none
-
+ 
     # Whitespace
     "&bkspc_del":
       type: backspace
       tap: $$mdi:backspace$$
       shifted: $$mdi:backspace-reverse-outline$$
-
+ 
     # Bluetooth
     "&bt BT_SEL 0":
       {s: $$mdi:bluetooth$$, t: $$mdi:numeric-1$$}
@@ -360,7 +374,7 @@ parse_config:
       tap: $$mdi:backup-restore$$
     "&bootloader":
       tap: $$mdi:progress-download$$
-
+ 
   # ZMK
   zmk_keycode_map:
     # Symbols
@@ -432,7 +446,7 @@ parse_config:
       shifted: '"'
     DOUBLE_QUOTES: '"'
     DQT: '"'
-
+ 
     LESS_THAN: <
     LT: <
     PERIOD: '.'
@@ -467,7 +481,7 @@ parse_config:
     NON_US_HASH: "#"
     NUHS: "#"
     TILDE2: "~"
-
+ 
     # Numbers
     N1:
       tap: 1
@@ -499,7 +513,7 @@ parse_config:
     N0:
       tap: 0
       shifted: ")"
-
+ 
     # Modifiers
     LCTRL: $$mdi:apple-keyboard-control$$
     LEFT_CONTROL: $$mdi:apple-keyboard-control$$
@@ -534,7 +548,7 @@ parse_config:
        shifted: ''
     # "Meh" key
     LS(LC(LALT)): $$mdi:star-three-points$$
-
+ 
     # Arrows
     UP: $$mdi:arrow-up-bold$$
     UP_ARROW: $$mdi:arrow-up-bold$$
@@ -544,7 +558,7 @@ parse_config:
     LEFT: $$mdi:arrow-left-bold$$
     RIGHT: $$mdi:arrow-right-bold$$
     RIGHT_ARROW: $$mdi:arrow-right-bold$$
-
+ 
     # Whitespace
     ENTER:
       type: enter
@@ -565,34 +579,34 @@ parse_config:
       tap: $$mdi:backspace$$
     DELETE: $$mdi:backspace-reverse-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
-
+ 
     # Locks
     CAPSLOCK: $$mdi:apple-keyboard-caps$$
     CAPS: $$mdi:apple-keyboard-caps$$
-
+ 
     # Sound
     C_MUTE: $$mdi:volume-off$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-low$$
     C_VOLUME_UP: $$mdi:volume-high$$
     C_VOLUME_DOWN: $$mdi:volume-low$$
-
+ 
     # Media
     C_NEXT: $$mdi:skip-next$$
     C_PREV: $$mdi:skip-previous$$
     C_PP: $$mdi:play-pause$$
-
+ 
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
     BT_SEL: $$mdi:bluetooth-connect$$
-
+ 
     # Settings
     C_BRI_UP: $$mdi:brightness-5$$
     C_BRIGHTNESS_INC: $$mdi:brightness-5$$
     C_BRI_DN: $$mdi:brightness-7$$
     C_BRI_DEC: $$mdi:brightness-7$$
     C_BRIGHTNESS_DEC: $$mdi:brightness-7$$
-
+ 
     # System
     C_POWER: $$mdi:power-standby$$
     C_AL_LOCK: $$mdi:lock$$
@@ -630,7 +644,7 @@ parse_config:
     RG(RS(V)):
       tap: $$mdi:video$$
       hold: zoom
-
+ 
   zmk_combos:
     combo_to_2:
       align: top
@@ -666,3 +680,4 @@ parse_config:
       key:
         shifted: ":"
         hold: ";"
+ 
