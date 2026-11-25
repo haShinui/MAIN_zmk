@@ -249,8 +249,10 @@ combos:
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
   l: [BASE, QWERTY]
-- p: [15, 16]
+- p: [14, 15]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
+- p: [15, 16]
+  k: {t: '$$mdi:backspace$$', type: backspace}
 - p: [17, 16]
   k: $$mdi:keyboard-space$$
   l: [BASE]
