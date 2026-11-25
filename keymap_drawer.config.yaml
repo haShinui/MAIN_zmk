@@ -218,12 +218,15 @@ parse_config:
     '&hmr END LC(RIGHT)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "$$mdi:arrow-right-bold$$"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-    '&hmr LEFT_WIN A': {s: "", h: "GUI", t: "A"}
-    '&hmr LEFT_ALT R': {s: "", h: "ALT", t: "R"}
-    '&hmr LCTRL S': {s: "", h: "CTRL", t: "S"}
-    '&hmr RCTRL E': {s: "", h: "CTRL", t: "E"}
-    '&hmr RIGHT_ALT I': {s: "", h: "ALT", t: "I"}
-    '&hmr RIGHT_WIN O': {s: "", h: "GUI", t: "O"}
+    '&hmr LEFT_WIN S': {s: "", h: "GUI", t: "S"}
+    '&hmr LEFT_ALT T': {s: "", h: "ALT", t: "T"}
+    '&hmr LEFT_SHIFT H': {s: "", h: "Shift", t: "H"}
+    '&hmr LCTRL C': {s: "", h: "CTRL", t: "C"}
+    '&hmr RCTRL N': {s: "", h: "CTRL", t: "N"}
+    '&hmr RIGHT_ALT E': {s: "", h: "ALT", t: "E"}
+    '&hmr RIGHT_WIN I': {s: "", h: "GUI", t: "I"}
+    '&hmr RIGHT_SHIFT A': {s: "", h: "Shift", t: "A"}
+    
     # Layers
     "&ltq 1 BACKSPACE":
       tap:  $$mdi:backspace$$

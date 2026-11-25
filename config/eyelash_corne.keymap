@@ -220,8 +220,8 @@
         default_layer {
             display-name = "BASE";
             bindings = <
-&kp BACKSPACE  &kp Q            &kp D            &kp L              &kp W              &kp J                                 &kp UP_ARROW               &kp SEMI             &kp B               &kp O                 &kp U                 &kp COMMA                &hmr UNDER MINUS
-&key_repeat    &hmr LEFT_WIN S  &hmr LEFT_ALT T  &hmr LEFT_SHIFT H  &hmr LCTRL C       &kp Y                       &kp LEFT  &sk LGUI     &kp RIGHT     &kp F                &hmr RCTRL N        &hmr RIGHT_SHIFT A    &hmr RIGHT_ALT E      &hmr RIGHT_WIN I         &hmr EXCL QUESTION
+&kp BACKSPACE  &kp F            &kp D            &kp L              &kp W              &kp J                                 &kp UP_ARROW               &kp SEMI             &kp B               &kp O                 &kp U                 &kp COMMA                &hmr UNDER MINUS
+&key_repeat    &hmr LEFT_WIN S  &hmr LEFT_ALT T  &hmr LEFT_SHIFT H  &hmr LCTRL C       &kp Y                       &kp LEFT  &sk LGUI     &kp RIGHT     &kp Q                &hmr RCTRL N        &hmr RIGHT_SHIFT A    &hmr RIGHT_ALT E      &hmr RIGHT_WIN I         &hmr EXCL QUESTION
 &tap_layer     &kp X            &kp K            &kp M              &kp G              &kp V      &kp C_PLAY_PAUSE           &kp DOWN                   &kp Z                &kp P               &kp APOS              &kp FSLH              &kp DOT                  &mo 3
                                                  &kp LGUI           &kp R              &lt 1 TAB                                                        &lt 2 ENTER          &kp SPACE           &sk LEFT_SHIFT
             >;
