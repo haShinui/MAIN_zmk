@@ -96,6 +96,11 @@ draw_config:
       visibility: hidden;
     }
  
+    /* raise the "_" hold label so it sits inside the key (type: underscore) */
+    .underscore text.hold {
+      transform: translate(0px, -4px);
+    }
+ 
   shrink_wide_legends: 6
   glyph_tap_size: 18
   glyph_hold_size: 15
@@ -195,11 +200,11 @@ parse_config:
     '&kp LC(X)': {s: "", h: "", t: "$$mdi:content-cut$$"}
     '&hmr LG(LS(S)) LG(S)': {s: "", h: "$$mdi:monitor-screenshot$$", t: "Gui+S"}
     # Hyprland workspaces: tap = switch to workspace N, hold = move window to workspace N
-    '&hmr LG(LS(N1)) LG(NUMBER_1)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "1"}
-    '&hmr LG(LS(N2)) LG(NUMBER_2)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "2"}
-    '&hmr LG(LS(N3)) LG(NUMBER_3)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "3"}
-    '&hmr LG(LS(N4)) LG(NUMBER_4)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "4"}
-    '&hmr LG(LS(N5)) LG(NUMBER_5)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "5"}
+    '&hmr LG(LS(N1)) LG(NUMBER_1)': {s: "", h: "$$mdi:monitor$$", t: "1"}
+    '&hmr LG(LS(N2)) LG(NUMBER_2)': {s: "", h: "$$mdi:monitor$$", t: "2"}
+    '&hmr LG(LS(N3)) LG(NUMBER_3)': {s: "", h: "$$mdi:monitor$$", t: "3"}
+    '&hmr LG(LS(N4)) LG(NUMBER_4)': {s: "", h: "$$mdi:monitor$$", t: "4"}
+    '&hmr LG(LS(N5)) LG(NUMBER_5)': {s: "", h: "$$mdi:monitor$$", t: "5"}
     '&hmr LC(LS(V)) LC(V)': {s: "", h: "paste_copy", t: "$$mdi:content-paste$$"}
     '&kp LC(Z)': {s: "", h: "", t: "$$mdi:undo$$"}
     '&kp LC(Y)': {s: "", h: "", t: "$$mdi:redo$$ "}
@@ -224,6 +229,7 @@ parse_config:
     '&hmr END LC(RIGHT)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "$$mdi:arrow-right-bold$$"}
     '&scrl MOVE_Y(40) UP_ARROW': {s: "", h: "", t: "$$mdi:arrow-up-bold$$"}
     '&scrl MOVE_Y(-40) DOWN': {s: "", h: "", t: "$$mdi:arrow-down-bold$$"}
+    '&hmr PSCRN LG(P)': {s: "", h: "$$mdi:monitor-screenshot$$", t: "$$mdi:monitor-multiple$$"}
  
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
  
@@ -237,8 +243,14 @@ parse_config:
     '&hmr RIGHT_SHIFT A': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "A"}
  
     # Shifted-punctuation keys on the outer column (they showed up as raw text)
-    '&hmr UNDER MINUS': {s: "", h: "_", t: "-"}
+    '&hmr UNDER MINUS': {s: "", h: "_", t: "-", type: underscore}
     '&hmr EXCL QUESTION': {s: "", h: "!", t: "?"}
+ 
+    # QWERTY layer home row mods (left hand)
+    '&hmr LEFT_WIN A': {s: "", h: "$$windows$$", t: "A"}
+    '&hmr LEFT_ALT S': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "S"}
+    '&hmr LEFT_SHIFT D': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "D"}
+    '&hmr LCTRL F': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "F"}
  
     # QWERTY layer home row mods (right hand)
     '&hmr RCTRL J': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "J"}
