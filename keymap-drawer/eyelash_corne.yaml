@@ -2,67 +2,67 @@ layout: {zmk_keyboard: eyelash_corne}
 layers:
   BASE:
   - {t: '$$mdi:backspace$$', type: backspace}
-  - B
-  - L
+  - Q
   - D
+  - L
   - W
-  - Z
+  - J
   - $$mdi:arrow-up-bold$$
-  - {t: '-', h: _, s: _}
-  - F
+  - {t: ;, s: ':'}
+  - B
   - O
   - U
-  - J
-  - {t: ., h: '"'}
+  - {t: ',', s: <}
+  - {t: '-', h: _, type: underscore}
   - '&key_repeat'
-  - {t: N, h: LEFT WIN}
-  - {t: R, h: ALT}
-  - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: S, h: CTRL}
-  - G
+  - {t: S, h: $$windows$$}
+  - {t: T, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: C, h: '$$mdi:apple-keyboard-control$$'}
+  - Y
   - $$mdi:arrow-left-bold$$
   - {t: $$windows$$, h: '$$mdi:gesture-tap-hold$$'}
   - $$mdi:arrow-right-bold$$
-  - Y
-  - {t: H, h: '$$mdi:apple-keyboard-control$$'}
+  - F
+  - {t: N, h: '$$mdi:apple-keyboard-control$$'}
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: E, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: I, h: RIGHT WIN}
+  - {t: I, h: $$windows$$}
   - {t: '?', h: '!'}
   - '&tap_layer'
-  - Q
   - X
+  - K
   - M
-  - C
+  - G
   - V
   - $$mdi:play-pause$$
   - $$mdi:arrow-down-bold$$
-  - K
+  - Z
   - P
-  - {t: ., h: ':', s: '>'}
-  - {t: ',', h: ;, s: <}
-  - {t: /, h: \, s: '?'}
+  - {t: '''', s: '"'}
+  - {t: /, s: '?'}
+  - {t: ., s: '>'}
   - FN
   - $$windows$$
-  - $$mdi:keyboard-space$$
+  - R
   - {t: '$$mdi:keyboard-tab$$', h: FUNCTIONS}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
   FUNCTIONS:
-  - {t: Gui+S, h: Shift+Gui+S}
-  - {t: Gui+1, h: Gui+Sft+1}
-  - {t: Gui+2, h: Gui+Sft+2}
-  - {t: Gui+3, h: Gui+Sft+3}
-  - {t: Gui+4, h: Gui+Sft+4}
-  - {t: Gui+5, h: Gui+Sft+5}
+  - {t: Gui+S, h: '$$mdi:monitor-screenshot$$'}
+  - {t: '1', h: '$$mdi:monitor$$'}
+  - {t: '2', h: '$$mdi:monitor$$'}
+  - {t: '3', h: '$$mdi:monitor$$'}
+  - {t: '4', h: '$$mdi:monitor$$'}
+  - {t: '5', h: '$$mdi:monitor$$'}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - $$mdi:bluetooth-off$$
   - {t: '$$mdi:numeric-1$$', s: '$$mdi:bluetooth$$'}
   - {t: $$3_bluetooth$$, h: ö, s: Ö}
   - {t: $$2_bluetooth$$, h: ü, s: Ü}
   - {t: '$$mdi:numeric-4$$', s: '$$mdi:bluetooth$$'}
-  - {t: Windows, h: Linux}
+  - {t: $$windows$$, h: '$$mdi:linux$$'}
   - $$mdi:file-find-outline$$
   - $$mdi:content-cut$$
   - {t: '$$mdi:content-copy$$', h: $$shift_copy$$}
@@ -117,14 +117,14 @@ layers:
   - (
   - )
   - {t: \, s: '|'}
-  - .
+  - {t: '''', s: '"'}
   - $$mdi:pan-left$$
   - {t: F, h: '$$mdi:apple-keyboard-command$$'}
   - $$mdi:pan-right$$
   - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:arrow-left-bold-box-outline$$'}
   - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:arrow-up-bold$$', h: '&msc MOVE_Y(40)'}
-  - {t: '$$mdi:arrow-down-bold$$', h: '&msc MOVE_Y(-40)'}
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:arrow-right-bold-box-outline$$'}
   - {t: ',', s: <}
@@ -136,7 +136,7 @@ layers:
   - Gui+$$mdi:keyboard-tab$$
   - $$mdi:pan-down$$
   - $$mdi:home$$
-  - {t: Gui+P, h: '$$mdi:printer-outline$$'}
+  - {t: '$$mdi:monitor-multiple$$', h: '$$mdi:monitor-screenshot$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - END
@@ -211,10 +211,10 @@ layers:
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - A
-  - S
-  - D
-  - F
+  - {t: A, h: $$windows$$}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: F, h: '$$mdi:apple-keyboard-control$$'}
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -223,7 +223,7 @@ layers:
   - {t: J, h: '$$mdi:apple-keyboard-control$$'}
   - {t: K, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
-  - {t: ;, h: RIGHT WIN, s: ':'}
+  - {t: ;, h: $$windows$$}
   - {t: /, s: '?'}
   - $$mdi:apple-keyboard-shift$$
   - Z
@@ -252,7 +252,7 @@ combos:
 - p: [15, 16]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
 - p: [17, 16]
-  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  k: $$mdi:keyboard-space$$
   l: [BASE]
 - p: [2, 3]
   k: {t: '$$mdi:backspace$$', type: backspace}
