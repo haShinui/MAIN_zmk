@@ -226,8 +226,6 @@
                                                  &kp LGUI           &kp R              &lt 1 TAB                                                        &lt 2 ENTER          &kp SPACE           &sk LEFT_SHIFT
             >;
 
-            >;
-
             sensor-bindings = <&scroll_encoder>;
         };
 
