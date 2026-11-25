@@ -14,14 +14,14 @@ manifest:
     - name: eyelash_corne
       url: https://github.com/haShinui/my_own_fork
       # url: https://github.com/a741725193/zmk-new_corne
-      revision: main
+      revision: zmk-main
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3  
+      revision: main
       import: app/west.yml
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
-      revision: v0.3.0
+      revision: main
     - name: zmk-helpers
       remote: urob
       revision: main
