@@ -218,14 +218,20 @@ parse_config:
     '&hmr END LC(RIGHT)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "$$mdi:arrow-right-bold$$"}
 
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
-    '&hmr LEFT_WIN S': {s: "", h: "GUI", t: "S"}
-    '&hmr LEFT_ALT T': {s: "", h: "ALT", t: "T"}
-    '&hmr LEFT_SHIFT H': {s: "", h: "Shift", t: "H"}
-    '&hmr LCTRL C': {s: "", h: "CTRL", t: "C"}
-    '&hmr RCTRL N': {s: "", h: "CTRL", t: "N"}
-    '&hmr RIGHT_ALT E': {s: "", h: "ALT", t: "E"}
-    '&hmr RIGHT_WIN I': {s: "", h: "GUI", t: "I"}
-    '&hmr RIGHT_SHIFT A': {s: "", h: "Shift", t: "A"}
+
+    '&hmr LEFT_WIN S': {s: "", h: "$$windows$$", t: "S"}
+    '&hmr LEFT_ALT T': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "T"}
+    '&hmr LEFT_SHIFT H': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "H"}
+    '&hmr LCTRL C': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "C"}
+    '&hmr RCTRL N': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "N"}
+    '&hmr RIGHT_ALT E': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "E"}
+    '&hmr RIGHT_WIN I': {s: "", h: "$$windows$$", t: "I"}
+    '&hmr RIGHT_SHIFT A': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "A"}
+ 
+    # Shifted-punctuation keys on the outer column (they showed up as raw text)
+    '&hmr UNDER MINUS': {s: "", h: "_", t: "-"}
+    '&hmr EXCL QUESTION': {s: "", h: "!", t: "?"}
+
     
     # Layers
     "&ltq 1 BACKSPACE":
@@ -418,8 +424,12 @@ parse_config:
     SQT:
       tap: "'"
       shifted: '"'
-    APOSTROPHE: <
-    APOS: .
+    APOSTROPHE:
+      tap: "'"
+      shifted: '"'
+    APOS:
+      tap: "'"
+      shifted: '"'
     DOUBLE_QUOTES: '"'
     DQT: '"'
 
