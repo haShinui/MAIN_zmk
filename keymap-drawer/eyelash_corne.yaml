@@ -45,7 +45,7 @@ layers:
   - FN
   - $$windows$$
   - R
-  - {t: '&cyc_enter 5', h: FUNCTIONS}
+  - {t: '&cyc_layer 5', h: FUNCTIONS}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -245,11 +245,55 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
-  SWITCH: ['&cyc_esc', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '$$mdi:arrow-up-bold$$', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end',
-    '&cyc_end', '&cyc_end', '&cyc_gui', '&cyc_alt', '$$mdi:apple-keyboard-shift$$', '&cyc_ctrl', '&cyc_end', '$$mdi:arrow-left-bold$$', '&cyc_end', '$$mdi:arrow-right-bold$$',
-    '&cyc_end', '&cyc_end', '$$mdi:apple-keyboard-shift$$', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end',
-    '&cyc_end', '$$mdi:arrow-down-bold$$', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end', '&cyc_end',
-    '&cyc_end', '&cyc_end']
+  SWITCH:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Gui+$$mdi:keyboard-tab$$
+  - Alt+$$mdi:keyboard-tab$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - Ctl+$$mdi:keyboard-tab$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
