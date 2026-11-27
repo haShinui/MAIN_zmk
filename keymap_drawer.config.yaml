@@ -230,6 +230,7 @@ parse_config:
     '&kp LA(TAB)': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "$$mdi:keyboard-tab$$"}
     '&kp LC(TAB)': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "$$mdi:keyboard-tab$$"}
     '&cyc_rev': {s: "", h: "", t: "$$mdi:keyboard-tab-reverse$$"}
+    '&cyc_mode': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "$$mdi:tab$$"}
 
     # Symbol Layer
     '&hmr HOME LC(LEFT)': {s: "", h: "$$mdi:arrow-left-bold-box-outline$$", t: "$$mdi:arrow-left-bold$$"}

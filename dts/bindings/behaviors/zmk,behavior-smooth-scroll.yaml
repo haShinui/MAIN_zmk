@@ -1,0 +1,35 @@
+description: |
+  Smooth scroll encoder: detents become high-resolution wheel reports right
+  away, spread over smooth-ms, with acceleration for fast turning.
+compatible: "zmk,behavior-smooth-scroll"
+properties:
+  "#sensor-binding-cells":
+    type: int
+    required: true
+    const: 0
+  notch-percent:
+    type: int
+    default: 100
+    description: Scroll per detent in percent of one mouse-wheel notch.
+  smooth-ms:
+    type: int
+    default: 40
+    description: Time over which one detent's scroll is spread.
+  tick-ms:
+    type: int
+    default: 8
+    description: Interval between the small wheel reports.
+  acceleration-window-ms:
+    type: int
+    default: 150
+    description: Detents closer than this get bigger. 0 = no acceleration.
+  max-acceleration-percent:
+    type: int
+    default: 400
+    description: Size of a detent at full speed, in percent.
+  invert:
+    type: boolean
+    description: Clockwise scrolls up instead of down.
+  horizontal:
+    type: boolean
+    description: Scroll sideways instead.

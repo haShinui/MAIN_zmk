@@ -54,6 +54,10 @@ static zmk_keymap_layers_state_t start_layers;
 static int armed_layer = -1;
 static int last_hotkey = -1;
 static int hotkeys_held;
+static int32_t cur_timeout_ms = CYC_TIMEOUT_MS;
+static int32_t next_timeout_ms = -1; /* set by &cyc_enc for its own hotkeys */
+static uint8_t enc_mode;             /* 0 = first key pair, 1 = second (toggled by &cyc_mode) */
+static int enc_mode_layer = -1;
 
 static struct {
     uint16_t page;
@@ -176,14 +180,16 @@ static int on_keycode(struct zmk_keycode_state_changed *ev) {
             }
             last_hotkey = h;
             hotkeys_held++;
+            cur_timeout_ms = next_timeout_ms >= 0 ? next_timeout_ms : CYC_TIMEOUT_MS;
+            next_timeout_ms = -1;
             /* no timeout while the key is held (OS auto-repeat keeps cycling) */
             k_work_cancel_delayable(&timeout_work);
         } else {
             if (hotkeys_held > 0) {
                 hotkeys_held--;
             }
-            if (active && hotkeys_held == 0 && CYC_TIMEOUT_MS > 0) {
-                k_work_reschedule(&timeout_work, K_MSEC(CYC_TIMEOUT_MS));
+            if (active && hotkeys_held == 0 && cur_timeout_ms > 0) {
+                k_work_reschedule(&timeout_work, K_MSEC(cur_timeout_ms));
             }
         }
         return ZMK_EV_EVENT_BUBBLE;
@@ -207,8 +213,8 @@ static int on_keycode(struct zmk_keycode_state_changed *ev) {
     }
 
     if (is_arrow(ev) || is_passthrough(ev)) {
-        if (CYC_TIMEOUT_MS > 0) {
-            k_work_reschedule(&timeout_work, K_MSEC(CYC_TIMEOUT_MS));
+        if (cur_timeout_ms > 0) {
+            k_work_reschedule(&timeout_work, K_MSEC(cur_timeout_ms));
         }
         return ZMK_EV_EVENT_BUBBLE;
     }
@@ -232,6 +238,11 @@ static int on_keycode(struct zmk_keycode_state_changed *ev) {
 }
 
 static int on_layer(struct zmk_layer_state_changed *ev) {
+    if (!ev->state && enc_mode_layer >= 0 && ev->layer == enc_mode_layer) {
+        /* the layer where Ctrl+Tab mode was chosen was released: back to mode 0 */
+        enc_mode = 0;
+        enc_mode_layer = -1;
+    }
     if (!ev->state && active && (start_layers & BIT(ev->layer))) {
         end_cycle();
     }
@@ -373,5 +384,142 @@ static const struct behavior_driver_api cyc_rev_api = {
 DT_INST_FOREACH_STATUS_OKAY(CYC_REV_INST)
 
 #endif /* cyclotab-reverse */
+
+/* ------------------------------------- &cyc_enc (encoder) and &cyc_mode */
+
+#undef DT_DRV_COMPAT
+#define DT_DRV_COMPAT zmk_behavior_cyclotab_encoder
+
+#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
+
+#include <stdlib.h>
+#include <zephyr/drivers/sensor.h>
+#include <zmk/sensors.h>
+#include <zmk/virtual_key_position.h>
+
+#define CYC_ENC_MAX_KEYS 8
+
+struct cyc_enc_config {
+    uint32_t keys[CYC_ENC_MAX_KEYS];
+    int keys_len;
+    int32_t timeout_ms;
+};
+
+struct cyc_enc_data {
+    struct sensor_value remainder[ZMK_KEYMAP_SENSORS_LEN][ZMK_KEYMAP_LAYERS_LEN];
+    int triggers[ZMK_KEYMAP_SENSORS_LEN][ZMK_KEYMAP_LAYERS_LEN];
+};
+
+static int cyc_enc_accept_data(struct zmk_behavior_binding *binding,
+                               struct zmk_behavior_binding_event event,
+                               const struct zmk_sensor_config *sensor_config,
+                               size_t channel_data_size,
+                               const struct zmk_sensor_channel_data *channel_data) {
+    const struct device *dev = zmk_behavior_get_binding(binding->behavior_dev);
+    struct cyc_enc_data *data = dev->data;
+    const struct sensor_value value = channel_data[0].value;
+    int idx = ZMK_SENSOR_POSITION_FROM_VIRTUAL_KEY_POSITION(event.position);
+    int triggers;
+
+    if (value.val1 == 0) {
+        triggers = value.val2;
+    } else {
+        struct sensor_value rem = data->remainder[idx][event.layer];
+        rem.val1 += value.val1;
+        rem.val2 += value.val2;
+        if (abs(rem.val2) >= 1000000) {
+            rem.val1 += rem.val2 / 1000000;
+            rem.val2 %= 1000000;
+        }
+        int trigger_degrees = 360 / sensor_config->triggers_per_rotation;
+        triggers = rem.val1 / trigger_degrees;
+        rem.val1 %= trigger_degrees;
+        data->remainder[idx][event.layer] = rem;
+    }
+    data->triggers[idx][event.layer] = triggers;
+    return 0;
+}
+
+static int cyc_enc_process(struct zmk_behavior_binding *binding,
+                           struct zmk_behavior_binding_event event,
+                           enum behavior_sensor_binding_process_mode mode) {
+    const struct device *dev = zmk_behavior_get_binding(binding->behavior_dev);
+    const struct cyc_enc_config *cfg = dev->config;
+    struct cyc_enc_data *data = dev->data;
+    int idx = ZMK_SENSOR_POSITION_FROM_VIRTUAL_KEY_POSITION(event.position);
+    int triggers = data->triggers[idx][event.layer];
+
+    data->triggers[idx][event.layer] = 0;
+    if (mode != BEHAVIOR_SENSOR_BINDING_PROCESS_MODE_TRIGGER || triggers == 0) {
+        return ZMK_BEHAVIOR_TRANSPARENT;
+    }
+
+    int pairs = cfg->keys_len / 2;
+    int m = pairs > 0 ? enc_mode % pairs : 0;
+    uint32_t key = cfg->keys[2 * m + (triggers > 0 ? 0 : 1)];
+
+    for (int i = 0; i < abs(triggers); i++) {
+        next_timeout_ms = cfg->timeout_ms;
+        raise_zmk_keycode_state_changed_from_encoded(key, true, k_uptime_get());
+        raise_zmk_keycode_state_changed_from_encoded(key, false, k_uptime_get());
+    }
+    return ZMK_BEHAVIOR_OPAQUE;
+}
+
+static int cyc_enc_init(const struct device *dev) { return 0; }
+
+static const struct behavior_driver_api cyc_enc_api = {
+    .sensor_binding_accept_data = cyc_enc_accept_data,
+    .sensor_binding_process = cyc_enc_process,
+};
+
+#define CYC_ENC_INST(n)                                                                            \
+    BUILD_ASSERT(DT_INST_PROP_LEN(n, keys) <= CYC_ENC_MAX_KEYS, "cyc_enc: too many keys");         \
+    static struct cyc_enc_data cyc_enc_data_##n;                                                   \
+    static const struct cyc_enc_config cyc_enc_config_##n = {                                      \
+        .keys = DT_INST_PROP(n, keys),                                                             \
+        .keys_len = DT_INST_PROP_LEN(n, keys),                                                     \
+        .timeout_ms = DT_INST_PROP(n, timeout_ms),                                                 \
+    };                                                                                             \
+    BEHAVIOR_DT_INST_DEFINE(n, cyc_enc_init, NULL, &cyc_enc_data_##n, &cyc_enc_config_##n,         \
+                            POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &cyc_enc_api);
+
+DT_INST_FOREACH_STATUS_OKAY(CYC_ENC_INST)
+
+#endif /* cyclotab-encoder */
+
+#undef DT_DRV_COMPAT
+#define DT_DRV_COMPAT zmk_behavior_cyclotab_mode
+
+#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
+
+static int on_mode_pressed(struct zmk_behavior_binding *binding,
+                           struct zmk_behavior_binding_event event) {
+    enc_mode = enc_mode ? 0 : 1;
+    enc_mode_layer = enc_mode ? zmk_keymap_highest_layer_active() : -1;
+    /* end a running switch so the next detent starts with the new modifier */
+    end_cycle();
+    return ZMK_BEHAVIOR_OPAQUE;
+}
+
+static int on_mode_released(struct zmk_behavior_binding *binding,
+                            struct zmk_behavior_binding_event event) {
+    return ZMK_BEHAVIOR_OPAQUE;
+}
+
+static int cyc_mode_init(const struct device *dev) { return 0; }
+
+static const struct behavior_driver_api cyc_mode_api = {
+    .binding_pressed = on_mode_pressed,
+    .binding_released = on_mode_released,
+};
+
+#define CYC_MODE_INST(n)                                                                           \
+    BEHAVIOR_DT_INST_DEFINE(n, cyc_mode_init, NULL, NULL, NULL, POST_KERNEL,                       \
+                            CONFIG_KERNEL_INIT_PRIORITY_DEFAULT, &cyc_mode_api);
+
+DT_INST_FOREACH_STATUS_OKAY(CYC_MODE_INST)
+
+#endif /* cyclotab-mode */
 
 #endif /* zmk,cyclotab */

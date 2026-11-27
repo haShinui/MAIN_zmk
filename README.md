@@ -87,6 +87,22 @@ Hold the Tab thumb key = FUNCTIONS layer. Tap it twice = normal Tab.
 | `zmk,behavior-cyclotab-reverse` | – | – | No settings. Outside a switch it just drops the armed layer. |
 | hold-tap `sw_lt` | `flavor`, `tapping-term-ms` | `tap-preferred`, `200` | Normal ZMK hold-tap settings for the thumb key. |
 
+### Encoders (custom behaviors in this repo)
+**Smooth scroll** (`&scroll_encoder`, BASE layer, `src/smooth_scroll.c`): each detent is sent straight to the computer as fine high-resolution wheel steps, spread over a few ms. No key queue, so no lag. Turning fast accelerates, and turning back stops immediately.
+
+| Setting | Default | Meaning |
+|---|---|---|
+| `notch-percent` | `100` | Scroll per detent (100 = one mouse-wheel notch). Higher = faster. |
+| `smooth-ms` | `40` | Glide time per detent. Higher = smoother but softer, `0` = instant. |
+| `tick-ms` | `8` | Time between the small wheel reports. |
+| `acceleration-window-ms` | `150` | Detents closer together than this get bigger. `0` = off. |
+| `max-acceleration-percent` | `400` | Detent size at full speed. |
+| `invert` | off | Clockwise scrolls up. |
+| `horizontal` | off | Scroll sideways. |
+
+**Window/tab switching** (`&Tab_switching`, SYMBOLS layer): turning taps Alt+Tab through Cyclotab, so Alt stays held while you turn and is released (window selected) `timeout-ms` (600) after you stop, or right away when you release SYMBOLS. Press the encoder (`&cyc_mode`) to switch to Ctrl+Tab for browser tabs. It goes back to Alt+Tab when you release SYMBOLS.
+`keys = <cw ccw cw ccw>`: first pair = normal mode, second pair = after pressing the encoder.
+
 **Not ported:** Alternate Repeat (`QK_AREP`). Keys that send no key code (mouse clicks, Bluetooth, layer keys) don't end a switch; the timeout or a layer release does.
 
 ---

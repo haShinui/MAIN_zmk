@@ -1,7 +1,14 @@
 DT_COMPAT_ZMK_CYCLOTAB := zmk,cyclotab
 DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_LAYER := zmk,behavior-cyclotab-layer
 DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_REVERSE := zmk,behavior-cyclotab-reverse
+DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_ENCODER := zmk,behavior-cyclotab-encoder
+DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_MODE := zmk,behavior-cyclotab-mode
+DT_COMPAT_ZMK_BEHAVIOR_SMOOTH_SCROLL := zmk,behavior-smooth-scroll
 
 config ZMK_CYCLOTAB
     bool
-    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_CYCLOTAB)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_LAYER)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_REVERSE))
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_CYCLOTAB)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_LAYER)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_REVERSE)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_ENCODER)) || $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_MODE))
+
+config ZMK_SMOOTH_SCROLL
+    bool
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_SMOOTH_SCROLL))

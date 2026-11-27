@@ -68,11 +68,18 @@
             bindings = <&mo>, <&cyc_layer>;
         };
 
+        // SYMBOLS encoder: turn = Alt+Tab (Cyclotab), stop turning = select.
+        // Press the encoder (&cyc_mode) to switch to Ctrl+Tab (browser tabs).
         Tab_switching: Tab_switching {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "TAB_SWITCHING";
+            compatible = "zmk,behavior-cyclotab-encoder";
             #sensor-binding-cells = <0>;
-            bindings = <&kp LC(LA(TAB))>, <&kp LC(LA(LS(TAB)))>;
+            keys = <LA(TAB) LS(LA(TAB)) LC(TAB) LS(LC(TAB))>;
+            timeout-ms = <600>;   // select this long after the last detent
+        };
+
+        cyc_mode: cyc_mode {
+            compatible = "zmk,behavior-cyclotab-mode";
+            #binding-cells = <0>;
         };
 
         tap_layer: tap_layer {
@@ -89,11 +96,14 @@
             bindings = <&kp C_NEXT>, <&kp C_PREVIOUS>;
         };
 
+        // BASE encoder: smooth scrolling (module src/smooth_scroll.c)
         scroll_encoder: scroll_encoder {
-            compatible = "zmk,behavior-sensor-rotate";
+            compatible = "zmk,behavior-smooth-scroll";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <62>;
+            notch-percent = <100>;              // scroll per detent (100 = one wheel notch)
+            smooth-ms = <40>;                   // glide time per detent
+            acceleration-window-ms = <150>;     // faster turning than this accelerates
+            max-acceleration-percent = <400>;   // up to 4x at full speed
         };
 
     };
@@ -269,7 +279,7 @@
             bindings = <
                 &kp GRAVE  &kp NUMBER_1     &kp NUMBER_2                    &kp NUMBER_3                       &kp NUMBER_4     &kp N5                                        &msc SCRL_UP                        &kp NUMBER_6        &kp N7            &kp N8                     &kp N9                  &kp N0     &kp BSPC
                 &kp MINUS  &hmr LGUI EQUAL  &hmr LEFT_ALT LEFT_PARENTHESIS  &hmr LEFT_SHIFT RIGHT_PARENTHESIS  &hmr LCTRL BSLH  &kp APOS                      &msc SCRL_LEFT  &kp LG(F)       &msc SCRL_RIGHT     &hmr HOME LC(LEFT)  &kp LEFT_ARROW    &scrl MOVE_Y(40) UP_ARROW  &scrl MOVE_Y(-40) DOWN  &kp RIGHT  &hmr END LC(RIGHT)
-                &kp COMMA  &kp DOT          &kp LBKT                        &kp RBKT                           &kp FSLH         &sk LEFT_ALT  &kp LG(TAB)                     &msc SCRL_DOWN                      &kp HOME            &hmr PSCRN LG(P)  &trans                     &trans                  &kp END    &kp ENTER
+                &kp COMMA  &kp DOT          &kp LBKT                        &kp RBKT                           &kp FSLH         &sk LEFT_ALT  &cyc_mode                       &msc SCRL_DOWN                      &kp HOME            &hmr PSCRN LG(P)  &trans                     &trans                  &kp END    &kp ENTER
                                                                             &sk LCTRL                          &sk LEFT_SHIFT   &sk LGUI                                                      &trans              &trans              &trans
             >;
 
