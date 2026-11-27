@@ -133,7 +133,7 @@ layers:
   - {t: ']', s: '}'}
   - {t: /, s: '?'}
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:keyboard-tab$$', h: $$windows$$}
+  - {t: '$$mdi:tab$$', h: '$$mdi:apple-keyboard-control$$'}
   - $$mdi:pan-down$$
   - $$mdi:home$$
   - {t: '$$mdi:monitor-multiple$$', h: '$$mdi:monitor-screenshot$$'}
