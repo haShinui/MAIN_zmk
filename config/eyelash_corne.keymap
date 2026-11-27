@@ -173,6 +173,14 @@
 
         };
 
+        // FUNCTIONS layer: Mute + ä key together = sticky Shift (then hold ä -> Ä)
+        sticky_shift_fn: sticky_shift_fn {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&sk LSHIFT>;
+            layers = <1>;
+        };
+
         back {
             bindings = <&kp BACKSPACE>;
             key-positions = <2 3>;
