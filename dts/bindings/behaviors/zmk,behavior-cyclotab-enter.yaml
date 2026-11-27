@@ -1,0 +1,9 @@
+description: |
+  Activates the cyclotab layer (parameter = layer id) and drops it again if no
+  cyclotab key is pressed within arm-timeout-ms. Tapping it again cancels.
+compatible: "zmk,behavior-cyclotab-enter"
+include: one_param.yaml
+properties:
+  arm-timeout-ms:
+    type: int
+    default: 1500

@@ -49,39 +49,43 @@
 
 / {
     behaviors {
-        // ---- TEST: tap the Tab key, then tap S / T / C to switch windows ----
-        swap_gui: swap_gui {
-            compatible = "zmk,behavior-tri-state";
+        // ---- Cyclotab (module in this repo): tap Tab thumb key, then tap S/T/C ----
+        cyc_gui: cyc_gui {
+            compatible = "zmk,behavior-cyclotab";
             #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <14>;
-            ignored-layers = <5>;
-            end-on-layer-deactivation = <5>;
+            modifier = <LGUI>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
         };
 
-        swap_alt: swap_alt {
-            compatible = "zmk,behavior-tri-state";
+        cyc_alt: cyc_alt {
+            compatible = "zmk,behavior-cyclotab";
             #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <15>;
-            ignored-layers = <5>;
-            end-on-layer-deactivation = <5>;
+            modifier = <LALT>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
         };
 
-        swap_ctrl: swap_ctrl {
-            compatible = "zmk,behavior-tri-state";
+        cyc_ctrl: cyc_ctrl {
+            compatible = "zmk,behavior-cyclotab";
             #binding-cells = <0>;
-            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-            ignored-key-positions = <17>;
-            ignored-layers = <5>;
-            end-on-layer-deactivation = <5>;
+            modifier = <LCTRL>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
         };
 
-        swlayer: swlayer {
-            compatible = "zmk,behavior-auto-layer";
+        // any other key on the SWITCH layer: ends the cycle, key is swallowed
+        cyc_end: cyc_end {
+            compatible = "zmk,behavior-cyclotab-end";
+            #binding-cells = <0>;
+            layer = <5>;
+        };
+
+        // ESC: sends ESC first (cancels the switcher), then ends
+        cyc_esc: cyc_esc {
+            compatible = "zmk,behavior-cyclotab-end";
+            #binding-cells = <0>;
+            layer = <5>; send-key = <ESC>;
+        };
+
+        cyc_enter: cyc_enter {
+            compatible = "zmk,behavior-cyclotab-enter";
             #binding-cells = <1>;
-            continue-list = <TAB>;
-            ignore-modifiers;
+            arm-timeout-ms = <1500>;
         };
 
         // &sw_lt 1 5: hold = layer 1 (as before), tap = start the SWITCH layer 5
@@ -90,7 +94,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&swlayer>;
+            bindings = <&mo>, <&cyc_enter>;
         };
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
@@ -347,10 +351,10 @@
         SWITCH {
             display-name = "SWITCH";
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &swap_gui  &swap_alt  &trans  &swap_ctrl  &trans             &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans                      &trans             &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans  &trans                                     &trans  &trans  &trans
+                &cyc_esc      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &kp UP_ARROW  &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
+                &cyc_end      &cyc_gui      &cyc_alt      &kp LSHIFT    &cyc_ctrl     &cyc_end      &kp LEFT      &cyc_end      &kp RIGHT     &cyc_end      &cyc_end      &kp RSHIFT    &cyc_end      &cyc_end      &cyc_end
+                &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &kp DOWN      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
+                &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
             >;
         };
 

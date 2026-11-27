@@ -1,0 +1,13 @@
+description: |
+  Ends a cyclotab cycle (releases the modifier, drops the layer) and swallows
+  the key. Optionally sends a key first (e.g. ESC to cancel the switcher).
+compatible: "zmk,behavior-cyclotab-end"
+include: zero_param.yaml
+properties:
+  layer:
+    type: int
+    required: true
+  send-key:
+    type: int
+    default: 0
+    description: Optional keycode tapped before the modifier is released.
