@@ -1000,6 +1000,11 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="210" y="74" width="28" height="26" class="combo"/>
 <use href="#mdi:skip-next" xlink:href="#mdi:skip-next" x="215" y="78" height="18" width="18.0" class="combo tap glyph mdi:skip-next"/>
 </g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="742" y="74" width="28" height="26" class="combo"/>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="747" y="78" height="18" width="18.0" class="combo tap glyph mdi:apple-keyboard-shift"/>
+<use href="#mdi:gesture-tap-hold" xlink:href="#mdi:gesture-tap-hold" x="748" y="83" height="15" width="15.0" class="combo hold glyph mdi:gesture-tap-hold"/>
+</g>
 </g>
 </g>
 <g transform="translate(40, 637)" class="layer-SYMBOLS">

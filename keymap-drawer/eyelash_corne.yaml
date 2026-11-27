@@ -308,6 +308,9 @@ combos:
 - p: [17, 16]
   k: $$mdi:skip-next$$
   l: [FUNCTIONS]
+- p: [23, 24]
+  k: {t: '$$mdi:apple-keyboard-shift$$', h: '$$mdi:gesture-tap-hold$$'}
+  l: [FUNCTIONS]
 - p: [2, 3]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [BASE]
