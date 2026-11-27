@@ -1,5 +1,6 @@
-DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB := zmk,behavior-cyclotab
+DT_COMPAT_ZMK_CYCLOTAB := zmk,cyclotab
+DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB_LAYER := zmk,behavior-cyclotab-layer
 
-config ZMK_BEHAVIOR_CYCLOTAB
+config ZMK_CYCLOTAB
     bool
-    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_BEHAVIOR_CYCLOTAB))
+    default $(dt_compat_enabled,$(DT_COMPAT_ZMK_CYCLOTAB))

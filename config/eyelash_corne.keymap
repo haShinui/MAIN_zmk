@@ -49,41 +49,10 @@
 
 / {
     behaviors {
-        // ---- Cyclotab (module in this repo): tap Tab thumb key, then tap S/T/C ----
-        cyc_gui: cyc_gui {
-            compatible = "zmk,behavior-cyclotab";
-            #binding-cells = <0>;
-            modifier = <LGUI>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
-        };
-
-        cyc_alt: cyc_alt {
-            compatible = "zmk,behavior-cyclotab";
-            #binding-cells = <0>;
-            modifier = <LALT>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
-        };
-
-        cyc_ctrl: cyc_ctrl {
-            compatible = "zmk,behavior-cyclotab";
-            #binding-cells = <0>;
-            modifier = <LCTRL>; key = <TAB>; layer = <5>; timeout-ms = <1000>;
-        };
-
-        // any other key on the SWITCH layer: ends the cycle, key is swallowed
-        cyc_end: cyc_end {
-            compatible = "zmk,behavior-cyclotab-end";
-            #binding-cells = <0>;
-            layer = <5>;
-        };
-
-        // ESC: sends ESC first (cancels the switcher), then ends
-        cyc_esc: cyc_esc {
-            compatible = "zmk,behavior-cyclotab-end";
-            #binding-cells = <0>;
-            layer = <5>; send-key = <ESC>;
-        };
-
-        cyc_enter: cyc_enter {
-            compatible = "zmk,behavior-cyclotab-enter";
+        // ---- Cyclotab (module in this repo, src/cyclotab.c) ----
+        // tap the Tab thumb key = arm SWITCH layer; tap it twice = plain Tab
+        cyc_layer: cyc_layer {
+            compatible = "zmk,behavior-cyclotab-layer";
             #binding-cells = <1>;
             arm-timeout-ms = <1500>;
         };
@@ -94,7 +63,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&cyc_enter>;
+            bindings = <&mo>, <&cyc_layer>;
         };
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
@@ -285,6 +254,13 @@
      *   thumb:             42  43  44                45    46  47
      */
 
+    // Cyclotab: these hotkeys keep their modifier held after release, anywhere in the keymap
+    cyclotab: cyclotab {
+        compatible = "zmk,cyclotab";
+        keys = <LA(TAB) LS(LA(TAB)) LG(TAB) LS(LG(TAB)) LC(TAB) LS(LC(TAB))>;
+        timeout-ms = <1000>;   // 0 = no timeout
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -351,10 +327,10 @@
         SWITCH {
             display-name = "SWITCH";
             bindings = <
-                &cyc_esc      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &kp UP_ARROW  &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
-                &cyc_end      &cyc_gui      &cyc_alt      &kp LSHIFT    &cyc_ctrl     &cyc_end      &kp LEFT      &cyc_end      &kp RIGHT     &cyc_end      &cyc_end      &kp RSHIFT    &cyc_end      &cyc_end      &cyc_end
-                &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &kp DOWN      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
-                &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end      &cyc_end
+                &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
+                &trans        &kp LG(TAB)   &kp LA(TAB)   &trans        &kp LC(TAB)   &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
+                &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
+                &trans        &trans        &trans        &trans        &trans        &trans
             >;
         };
 
