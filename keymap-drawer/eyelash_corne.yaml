@@ -257,7 +257,7 @@ combos:
   k: $$mdi:keyboard-space$$
   l: [BASE]
 - p: [17, 16]
-  k: {t: '$$mdi:skip-next$$', h: '$$mdi:skip-previous$$'}
+  k: $$mdi:skip-next$$
   l: [FUNCTIONS]
 - p: [2, 3]
   k: {t: '$$mdi:backspace$$', type: backspace}
