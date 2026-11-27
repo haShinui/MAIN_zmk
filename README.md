@@ -1,8 +1,8 @@
 # Eyelash Corne ZMK Keymap
-Switched to [Racket](https://layouts.wiki/layouts/2024/racket/) and [comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil).
-Here alos [website](https://github.com/mctechnology17/awesome-zmk#drivers-display) for display drivers zmk.
+Layout: [Racket](https://layouts.wiki/layouts/2024/racket/) with Q/F swapped ([comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil)).
+Display drivers and modules: [awesome-zmk](https://github.com/mctechnology17/awesome-zmk#drivers-display).
 
-Also now should be all on newest ZMK verion and working.
+Runs on **ZMK main (Zephyr 4.1)** with the board from [my_own_fork](https://github.com/haShinui/my_own_fork) (branch `zmk-main`) and nice!view gem displays.
 ## Keymap Diagram
 
 ![Diagram](https://github.com/haShinui/MAIN_zmk/blob/Mymain/keymap-drawer/eyelash_corne.svg)
@@ -11,7 +11,7 @@ Also now should be all on newest ZMK verion and working.
 
 ## ⚡ Features
 - ✅ **Layered keymap** with Home Row Mods (HRM)
-- ✅ **Unicode support** for German (Ä, Ö, Ü, ß) and French characters
+- ✅ **Unicode** ä/ö/ü (Ä/Ö/Ü with Shift) on the FUNCTIONS layer via [zmk-unicode](https://github.com/urob/zmk-unicode)
 - ✅ **Bluetooth layer switching**
 - ✅ **Scroll and RGB encoder support**
 - ✅ **Cyclotab window switching** (custom module, see below)
@@ -91,33 +91,19 @@ Hold the Tab thumb key = FUNCTIONS layer. Tap it twice = normal Tab.
 
 ---
 
-## 🛠️ **How to Modify the Keymap**
-1. **Edit `config/eyelash_corne.keymap`** to adjust key bindings.
-2. **Build firmware with ZMK**:
-   First build **with** german.dtsi so makes firmware
-3. **Remove german.dtsi**
-    So that it can make new drawing and display it, takes some time to update, cached in browser.
-3. **Add german.dtsi back**
-    For next time
+## 🛠️ How to Modify the Keymap
+1. Edit `config/eyelash_corne.keymap` (layers, combos, behaviors) or `config/german.dtsi` (hold-tap behaviors like `&hmr`).
+2. Push. GitHub Actions builds the firmware (**Build ZMK firmware**) and redraws the diagram (**Draw ZMK keymaps**) automatically.
+3. Flash: download the `firmware` artifact, double-tap reset on a half, copy the UF2:
+   - left half: `eyelash_corne_studio_left.uf2` (the keymap lives here, so keymap changes only need this one)
+   - right half: `eyelash_corne_and_nice_view_right.uf2`
+   - `settings_reset` only when pairing is broken (flash it on both halves, then the normal files, then re-pair)
+
+Diagram legends/icons are set in `keymap_drawer.config.yaml` (`raw_binding_map` for keys, `zmk_combos` for combos).
 
 ### *Note*
-When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), after pushing you need to **reconfigure .keymap** file and put **german.dtsi** at the bottom of the other includes
-example
-```
-#define HOST_OS 1
-#include <behaviors.dtsi>
-#include "zmk-helpers/helper.h"
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
+When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), keep `#include "german.dtsi"` below the other includes after saving, it needs `zmk-helpers/helper.h` first.
 
-#include <input/processors.dtsi>
-
-#include "german.dtsi"
-```
 ### **Costum SVG** 
 Should be done with [this](https://pixelied.com/home). Here can combine 2 svg in 1.
 
