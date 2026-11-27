@@ -671,6 +671,8 @@ parse_config:
     # FUNCTIONS layer media combo: show only the "next song" symbol
     skip_previous:
       key: "$$mdi:skip-next$$"
+    sticky_shift_fn:
+      key: "$$mdi:apple-keyboard-shift$$"
     combo_minus:
       key:
         shifted: "_"
