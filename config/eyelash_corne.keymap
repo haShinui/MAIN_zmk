@@ -57,6 +57,12 @@
             arm-timeout-ms = <1500>;
         };
 
+        // during a switch: go back one window (no Shift holding needed)
+        cyc_rev: cyc_rev {
+            compatible = "zmk,behavior-cyclotab-reverse";
+            #binding-cells = <0>;
+        };
+
         // &sw_lt 1 5: hold = layer 1 (as before), tap = start the SWITCH layer 5
         sw_lt: sw_lt {
             compatible = "zmk,behavior-hold-tap";
@@ -328,7 +334,7 @@
             display-name = "SWITCH";
             bindings = <
                 &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
-                &trans        &kp LG(TAB)   &kp LA(TAB)   &trans        &kp LC(TAB)   &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
+                &trans        &kp LG(TAB)   &kp LA(TAB)   &cyc_rev      &kp LC(TAB)   &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
                 &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans
                 &trans        &trans        &trans        &trans        &trans        &trans
             >;
