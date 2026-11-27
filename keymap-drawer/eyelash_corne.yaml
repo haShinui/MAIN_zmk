@@ -297,7 +297,7 @@ layers:
 combos:
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
-  l: [BASE, QWERTY]
+  l: [BASE, QWERTY, SWITCH]
 - p: [14, 15]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
 - p: [15, 16]
