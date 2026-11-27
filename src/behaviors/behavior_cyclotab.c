@@ -15,7 +15,9 @@
 
 #include <zmk/behavior.h>
 #include <zmk/keymap.h>
+#include <zmk/event_manager.h>
 #include <zmk/events/keycode_state_changed.h>
+#include <zmk/events/layer_state_changed.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -71,6 +73,24 @@ static void cyc_finish_all(int32_t layer) {
         zmk_keymap_layer_deactivate(layer, false);
     }
 }
+
+/* Releasing the layer a cyclotab key lives on releases the modifier immediately. */
+static int cyc_layer_listener(const zmk_event_t *eh) {
+    const struct zmk_layer_state_changed *ev = as_zmk_layer_state_changed(eh);
+    if (ev == NULL || ev->state) {
+        return ZMK_EV_EVENT_BUBBLE;
+    }
+    for (int i = 0; i < ARRAY_SIZE(cyc_devs); i++) {
+        const struct cyc_config *cfg = cyc_devs[i]->config;
+        if (cfg->layer == ev->layer) {
+            cyc_stop(cyc_devs[i], false);
+        }
+    }
+    return ZMK_EV_EVENT_BUBBLE;
+}
+
+ZMK_LISTENER(behavior_cyclotab, cyc_layer_listener);
+ZMK_SUBSCRIPTION(behavior_cyclotab, zmk_layer_state_changed);
 
 static void cyc_timer_handler(struct k_work *work) {
     struct k_work_delayable *dwork = k_work_delayable_from_work(work);
