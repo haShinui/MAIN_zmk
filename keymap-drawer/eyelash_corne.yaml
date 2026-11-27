@@ -45,7 +45,7 @@ layers:
   - FN
   - $$windows$$
   - R
-  - {t: '&cyc_layer 5', h: FUNCTIONS}
+  - {t: '$$mdi:keyboard-tab$$', h: FUNCTIONS}
   - {t: '$$mdi:keyboard-return$$', h: SYMBOLS}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -66,7 +66,7 @@ layers:
   - $$mdi:file-find-outline$$
   - $$mdi:content-cut$$
   - {t: '$$mdi:content-copy$$', h: $$shift_copy$$}
-  - {t: '$$mdi:content-paste$$', h: paste_copy}
+  - {t: '$$mdi:content-paste$$', h: $$paste_copy$$}
   - $$mdi:undo$$
   - '$$mdi:redo$$ '
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
@@ -94,7 +94,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$windows$$
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -133,7 +133,7 @@ layers:
   - {t: ']', s: '}'}
   - {t: /, s: '?'}
   - {t: '$$mdi:apple-keyboard-option$$', h: '$$mdi:gesture-tap-hold$$'}
-  - Gui+$$mdi:keyboard-tab$$
+  - {t: '$$mdi:keyboard-tab$$', h: $$windows$$}
   - $$mdi:pan-down$$
   - $$mdi:home$$
   - {t: '$$mdi:monitor-multiple$$', h: '$$mdi:monitor-screenshot$$'}
@@ -260,10 +260,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Gui+$$mdi:keyboard-tab$$
-  - Alt+$$mdi:keyboard-tab$$
-  - '&cyc_rev'
-  - Ctl+$$mdi:keyboard-tab$$
+  - {t: '$$mdi:keyboard-tab$$', h: $$windows$$}
+  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-option$$'}
+  - $$mdi:keyboard-tab-reverse$$
+  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
