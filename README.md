@@ -1,6 +1,8 @@
 # Eyelash Corne ZMK Keymap
 Switched to [Racket](https://layouts.wiki/layouts/2024/racket/) and [comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil).
+Here alos [website](https://github.com/mctechnology17/awesome-zmk#drivers-display) for display drivers zmk.
 
+Also now should be all on newest ZMK verion and working.
 ## Keymap Diagram
 
 ![Diagram](https://github.com/haShinui/MAIN_zmk/blob/Mymain/keymap-drawer/eyelash_corne.svg)

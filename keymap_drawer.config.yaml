@@ -668,6 +668,9 @@ parse_config:
     combo_mute:
       align: top
       offset: 0.15
+    # FUNCTIONS layer media combo: show only the "next song" symbol
+    skip_previous:
+      key: "$$mdi:skip-next$$"
     combo_minus:
       key:
         shifted: "_"
