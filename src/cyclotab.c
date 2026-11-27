@@ -36,6 +36,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #define DT_DRV_COMPAT zmk_cyclotab
 
+#if !DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
+#error "cyclotab: &cyc_layer / &cyc_rev need a node with compatible = \"zmk,cyclotab\""
+#endif
+
 #if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
 
 static const uint32_t hotkeys[] = DT_INST_PROP(0, keys);
@@ -190,6 +194,11 @@ static int on_keycode(struct zmk_keycode_state_changed *ev) {
     }
 
     if (!active) {
+        /* a new press of a consumed keycode means its old release was lost:
+         * forget it so this key's own release is not swallowed */
+        if (ev->state) {
+            take_consumed(ev->usage_page, ev->keycode);
+        }
         /* armed switch layer but a normal key was pressed: drop the layer */
         if (ev->state && armed_layer >= 0) {
             disarm();
@@ -337,9 +346,7 @@ static int on_rev_pressed(struct zmk_behavior_binding *binding,
     }
     /* same hotkey with Shift added = previous window */
     rev_sent = hotkeys[last_hotkey] | ((uint32_t)MOD_LSFT << 24);
-    int keep = last_hotkey;
     raise_zmk_keycode_state_changed_from_encoded(rev_sent, true, k_uptime_get());
-    last_hotkey = keep;
     return ZMK_BEHAVIOR_OPAQUE;
 }
 
