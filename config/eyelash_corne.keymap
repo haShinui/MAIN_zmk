@@ -49,6 +49,49 @@
 
 / {
     behaviors {
+        // ---- TEST: tap the Tab key, then tap S / T / C to switch windows ----
+        swap_gui: swap_gui {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <14>;
+            ignored-layers = <5>;
+            end-on-layer-deactivation = <5>;
+        };
+
+        swap_alt: swap_alt {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <15>;
+            ignored-layers = <5>;
+            end-on-layer-deactivation = <5>;
+        };
+
+        swap_ctrl: swap_ctrl {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+            ignored-key-positions = <17>;
+            ignored-layers = <5>;
+            end-on-layer-deactivation = <5>;
+        };
+
+        swlayer: swlayer {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <TAB>;
+            ignore-modifiers;
+        };
+
+        // &sw_lt 1 5: hold = layer 1 (as before), tap = start the SWITCH layer 5
+        sw_lt: sw_lt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&swlayer>;
+        };
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -247,7 +290,7 @@
                 &kp BACKSPACE  &kp Q        &kp D            &kp L              &kp W         &kp J                                     &kp UP_ARROW                  &kp SEMI   &kp B          &kp O               &kp U             &kp COMMA         &hmr UNDER MINUS
                 &key_repeat    &hmr LGUI S  &hmr LEFT_ALT T  &hmr LEFT_SHIFT H  &hmr LCTRL C  &kp Y                           &kp LEFT  &sk LGUI      &kp RIGHT       &kp F      &hmr RCTRL N   &hmr RIGHT_SHIFT A  &hmr RIGHT_ALT E  &hmr RIGHT_WIN I  &hmr EXCL QUESTION
                 &tap_layer     &kp X        &kp K            &kp M              &kp G         &kp V      &kp C_PLAY_PAUSE               &kp DOWN                      &kp Z      &kp P          &kp APOS            &kp FSLH          &kp DOT           &mo 3
-                                                             &kp LGUI           &kp R         &lt 1 TAB                                               &lt 2 ENTER     &kp SPACE  &kp BACKSPACE
+                                                             &kp LGUI           &kp R         &sw_lt 1 5                                              &lt 2 ENTER     &kp SPACE  &kp BACKSPACE
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -299,6 +342,16 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+        };
+
+        SWITCH {
+            display-name = "SWITCH";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans                               &trans             &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &swap_gui  &swap_alt  &trans  &swap_ctrl  &trans             &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans                      &trans             &trans  &trans  &trans  &trans  &trans  &trans
+                                        &trans  &trans  &trans                                     &trans  &trans  &trans
+            >;
         };
 
     };
