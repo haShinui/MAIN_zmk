@@ -1,0 +1,5 @@
+description: |
+  Unicode mode indicator: &uc_ind 0 = Windows, &uc_ind 1 = Linux. Global
+  behavior (runs on both halves); the nice!view on the right half shows it.
+compatible: "zmk,behavior-uc-indicator"
+include: one_param.yaml

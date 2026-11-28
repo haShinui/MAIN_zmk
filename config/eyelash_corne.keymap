@@ -77,6 +77,12 @@
             timeout-ms = <600>;   // select this long after the last detent
         };
 
+        // umlaut mode indicator for the right screen (0 = Windows, 1 = Linux), runs on both halves
+        uc_ind: uc_ind {
+            compatible = "zmk,behavior-uc-indicator";
+            #binding-cells = <1>;
+        };
+
         cyc_mode: cyc_mode {
             compatible = "zmk,behavior-cyclotab-mode";
             #binding-cells = <0>;
@@ -220,13 +226,13 @@
         win: win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&uc UC_SET_WIN_COMPOSE>;
+            bindings = <&uc UC_SET_WIN_COMPOSE>, <&uc_ind 0>;
             label = "win";
         };
         lin: lin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&uc UC_SET_LINUX>;
+            bindings = <&uc UC_SET_LINUX>, <&uc_ind 1>;
             label = "lin";
         };
 
