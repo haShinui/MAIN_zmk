@@ -1,8 +1,8 @@
 # Eyelash Corne ZMK Keymap
-Switched to [Racket](https://layouts.wiki/layouts/2024/racket/) and [comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil).
-Here alos [website](https://github.com/mctechnology17/awesome-zmk#drivers-display) for display drivers zmk.
+Layout: [Racket](https://layouts.wiki/layouts/2024/racket/) with Q/F swapped ([comparison website](https://altalpha.timvink.nl/index.html?thumbs=true&highlight=bunya%2Cracket%2Cnordrassil)).
+Display drivers and modules: [awesome-zmk](https://github.com/mctechnology17/awesome-zmk#drivers-display).
 
-Also now should be all on newest ZMK verion and working.
+Runs on **ZMK main (Zephyr 4.1)** with the board from [my_own_fork](https://github.com/haShinui/my_own_fork) (branch `zmk-main`) and nice!view gem displays.
 ## Keymap Diagram
 
 ![Diagram](https://github.com/haShinui/MAIN_zmk/blob/Mymain/keymap-drawer/eyelash_corne.svg)
@@ -11,39 +11,115 @@ Also now should be all on newest ZMK verion and working.
 
 ## ⚡ Features
 - ✅ **Layered keymap** with Home Row Mods (HRM)
-- ✅ **Unicode support** for German (Ä, Ö, Ü, ß) and French characters
+- ✅ **Unicode** ä/ö/ü (Ä/Ö/Ü with Shift) on the FUNCTIONS layer via [zmk-unicode](https://github.com/urob/zmk-unicode)
 - ✅ **Bluetooth layer switching**
 - ✅ **Scroll and RGB encoder support**
+- ✅ **Cyclotab window switching** (custom module, see below)
 
 ---
 
-## 🛠️ **How to Modify the Keymap**
-1. **Edit `config/eyelash_corne.keymap`** to adjust key bindings.
-2. **Build firmware with ZMK**:
-   First build **with** german.dtsi so makes firmware
-3. **Remove german.dtsi**
-    So that it can make new drawing and display it, takes some time to update, cached in browser.
-3. **Add german.dtsi back**
-    For next time
+## 🔁 Cyclotab (custom module in this repo)
+A ZMK port of [Cyclotab](https://getreuer.info/posts/keyboards/cyclotab/) by Pascal Getreuer.
+Code: `src/cyclotab.c`, bindings: `dts/bindings/`. The repo itself is loaded as a ZMK module (`zephyr/module.yml`), so no extra entry in `west.yml` is needed.
+
+**What it does:** a hotkey like Alt+Tab keeps its modifier held after you release the key, so you never hold Alt yourself.
+- Tap the hotkey again and again to cycle through windows.
+- Any other key ends the switch (modifier released = window selected). That key is **consumed**, so it is not typed into the new window.
+- Esc cancels (Esc is sent, then the modifier is released).
+- Arrow keys and Delete pass through (Delete closes the selected window in the Windows switcher).
+- Shift (held, sticky or home-row) or `&cyc_rev` goes back one window.
+- Releasing a layer that was active when the switch started ends it immediately.
+- After `timeout-ms` without a tap the modifier is released. The timer only starts once the hotkey is let go, so holding the key to auto-repeat is fine.
+- It reacts to the **key code**, not the key, so it works from `&kp`, `&hmr`, `&lt`, combos and `&key_repeat`.
+
+### How I use it
+Tap the Tab thumb key → SWITCH layer → tap **S** (Gui+Tab), **T** (Alt+Tab) or **C** (Ctrl+Tab), repeat to cycle, **H** = back, Space (or any key) = pick.
+Hold the Tab thumb key = FUNCTIONS layer. Tap it twice = normal Tab.
+
+### Example
+```dts
+/ {
+    behaviors {
+        // tap: arm the SWITCH layer, second tap: plain Tab
+        cyc_layer: cyc_layer {
+            compatible = "zmk,behavior-cyclotab-layer";
+            #binding-cells = <1>;
+            arm-timeout-ms = <1500>;
+        };
+
+        // go back one window during a switch
+        cyc_rev: cyc_rev {
+            compatible = "zmk,behavior-cyclotab-reverse";
+            #binding-cells = <0>;
+        };
+
+        // thumb key: hold = layer, tap = arm switch layer (like &lt)
+        sw_lt: sw_lt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&cyc_layer>;
+        };
+    };
+
+    // global settings: which hotkeys behave like Cyclotab
+    cyclotab: cyclotab {
+        compatible = "zmk,cyclotab";
+        keys = <LA(TAB) LS(LA(TAB)) LG(TAB) LS(LG(TAB)) LC(TAB) LS(LC(TAB))>;
+        timeout-ms = <1000>;
+    };
+};
+
+// base layer thumb key:        &sw_lt 1 5
+// SWITCH layer (5), home row:  &kp LG(TAB)  &kp LA(TAB)  &cyc_rev  &kp LC(TAB)
+// also works directly:         &hmr LALT LA(TAB)   or   &lt 2 LA(TAB)
+```
+
+### Settings
+| Where | Setting | Default | Meaning |
+|---|---|---|---|
+| `zmk,cyclotab` | `keys` | required | Hotkeys that start a switch. The modifier held is the hotkey's modifier without Shift; a Shift version goes backwards. |
+| `zmk,cyclotab` | `timeout-ms` | `1000` | Release the modifier this long after the last tap. `0` = never (only another key ends it). |
+| `zmk,behavior-cyclotab-layer` | parameter | – | Layer to arm, e.g. `&cyc_layer 5`. |
+| `zmk,behavior-cyclotab-layer` | `arm-timeout-ms` | `1500` | Drop the armed layer if no hotkey is tapped in this time. `0` = never. Any normal key also drops it (and is typed). |
+| `zmk,behavior-cyclotab-layer` | `tap-key` | `TAB` | Sent when the arm key is tapped a second time. `0` = nothing. |
+| `zmk,behavior-cyclotab-reverse` | – | – | No settings. Outside a switch it just drops the armed layer. |
+| hold-tap `sw_lt` | `flavor`, `tapping-term-ms` | `tap-preferred`, `200` | Normal ZMK hold-tap settings for the thumb key. |
+
+### Encoders (custom behaviors in this repo)
+**Smooth scroll** (`&scroll_encoder`, BASE layer, `src/smooth_scroll.c`): each detent is sent straight to the computer as fine high-resolution wheel steps, spread over a few ms. No key queue, so no lag. Turning fast accelerates, and turning back stops immediately.
+
+| Setting | Default | Meaning |
+|---|---|---|
+| `notch-percent` | `100` | Scroll per detent (100 = one mouse-wheel notch). Higher = faster. |
+| `smooth-ms` | `40` | Glide time per detent. Higher = smoother but softer, `0` = instant. |
+| `tick-ms` | `8` | Time between the small wheel reports. |
+| `acceleration-window-ms` | `150` | Detents closer together than this get bigger. `0` = off. |
+| `max-acceleration-percent` | `400` | Detent size at full speed. |
+| `invert` | off | Clockwise scrolls up. |
+| `horizontal` | off | Scroll sideways. |
+
+**Window/tab switching** (`&Tab_switching`, SYMBOLS layer): turning taps Alt+Tab through Cyclotab, so Alt stays held while you turn and is released (window selected) `timeout-ms` (600) after you stop, or right away when you release SYMBOLS. Press the encoder (`&cyc_mode`) to switch to Ctrl+Tab for browser tabs. It goes back to Alt+Tab when you release SYMBOLS.
+`keys = <cw ccw cw ccw>`: first pair = normal mode, second pair = after pressing the encoder.
+
+**Not ported:** Alternate Repeat (`QK_AREP`). Keys that send no key code (mouse clicks, Bluetooth, layer keys) don't end a switch; the timeout or a layer release does.
+
+---
+
+## 🛠️ How to Modify the Keymap
+1. Edit `config/eyelash_corne.keymap` (layers, combos, behaviors) or `config/german.dtsi` (hold-tap behaviors like `&hmr`).
+2. Push. GitHub Actions builds the firmware (**Build ZMK firmware**) and redraws the diagram (**Draw ZMK keymaps**) automatically.
+3. Flash: download the `firmware` artifact, double-tap reset on a half, copy the UF2:
+   - left half: `eyelash_corne_studio_left.uf2` (the keymap lives here, so keymap changes only need this one)
+   - right half: `eyelash_corne_and_nice_view_right.uf2`
+   - `settings_reset` only when pairing is broken (flash it on both halves, then the normal files, then re-pair)
+
+Diagram legends/icons are set in `keymap_drawer.config.yaml` (`raw_binding_map` for keys, `zmk_combos` for combos).
 
 ### *Note*
-When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), after pushing you need to **reconfigure .keymap** file and put **german.dtsi** at the bottom of the other includes
-example
-```
-#define HOST_OS 1
-#include <behaviors.dtsi>
-#include "zmk-helpers/helper.h"
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
+When working with [Keymap editor](https://nickcoutsos.github.io/keymap-editor/), keep `#include "german.dtsi"` below the other includes after saving, it needs `zmk-helpers/helper.h` first.
 
-#include <input/processors.dtsi>
-
-#include "german.dtsi"
-```
 ### **Costum SVG** 
 Should be done with [this](https://pixelied.com/home). Here can combine 2 svg in 1.
 

@@ -1,0 +1,14 @@
+description: |
+  Tap to arm a switch layer (param = layer). A hotkey on that layer starts a
+  cycle; the layer is dropped when the cycle ends, when any other key is
+  pressed, or after arm-timeout-ms. Tapping it again while armed sends a
+  plain tap-key (default TAB) instead.
+compatible: "zmk,behavior-cyclotab-layer"
+include: one_param.yaml
+properties:
+  arm-timeout-ms:
+    type: int
+    default: 1500
+  tap-key:
+    type: int
+    default: 0x7002B

@@ -1,0 +1,5 @@
+description: |
+  Toggles &cyc_enc between its first and second key pair (e.g. Alt+Tab and
+  Ctrl+Tab). Resets to the first pair when the layer it was pressed on is released.
+compatible: "zmk,behavior-cyclotab-mode"
+include: zero_param.yaml

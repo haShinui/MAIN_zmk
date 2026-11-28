@@ -1,0 +1,5 @@
+description: |
+  During a Cyclotab cycle, sends the current hotkey with Shift added
+  (previous window). Outside a cycle it only closes the armed switch layer.
+compatible: "zmk,behavior-cyclotab-reverse"
+include: zero_param.yaml

@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: m165437 #new entry
-      url-base: https://github.com/M165437 #new entry
       # Additional modules containing boards/shields/custom code can be listed here as well.
       # See:
       # - https://zmk.dev/docs/features/modules
@@ -14,14 +12,11 @@ manifest:
     - name: eyelash_corne
       url: https://github.com/haShinui/my_own_fork
       # url: https://github.com/a741725193/zmk-new_corne
-      revision: main
+      revision: zmk-main
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3  
+      revision: main
       import: app/west.yml
-    - name: nice-view-gem #new entry
-      remote: m165437 #new entry
-      revision: v0.3.0
     - name: zmk-helpers
       remote: urob
       revision: main

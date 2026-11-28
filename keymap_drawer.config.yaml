@@ -205,7 +205,7 @@ parse_config:
     '&hmr LG(LS(N3)) LG(NUMBER_3)': {s: "", h: "$$mdi:monitor$$", t: "3"}
     '&hmr LG(LS(N4)) LG(NUMBER_4)': {s: "", h: "$$mdi:monitor$$", t: "4"}
     '&hmr LG(LS(N5)) LG(NUMBER_5)': {s: "", h: "$$mdi:monitor$$", t: "5"}
-    '&hmr LC(LS(V)) LC(V)': {s: "", h: "paste_copy", t: "$$mdi:content-paste$$"}
+    '&hmr LC(LS(V)) LC(V)': {s: "", h: "$$paste_copy$$", t: "$$mdi:content-paste$$"}
     '&kp LC(Z)': {s: "", h: "", t: "$$mdi:undo$$"}
     '&kp LC(Y)': {s: "", h: "", t: "$$mdi:redo$$ "}
     '&kp LC(R)': {s: "", h: "", t: "$$mdi:web-refresh$$"}
@@ -224,6 +224,14 @@ parse_config:
     '&next_previous': {s: "", h: "$$mdi:skip-previous$$", t: "$$mdi:skip-next$$"}
     '&win_lin 0 1': {s: "", h: "$$mdi:linux$$", t: "$$windows$$"}
  
+    # Cyclotab / SWITCH layer
+    '&sw_lt 1 5': {s: "", h: "FUNCTIONS", t: "$$mdi:keyboard-tab$$"}
+    '&kp LG(TAB)': {s: "", h: "$$windows$$", t: "$$mdi:keyboard-tab$$"}
+    '&kp LA(TAB)': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "$$mdi:keyboard-tab$$"}
+    '&kp LC(TAB)': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "$$mdi:keyboard-tab$$"}
+    '&cyc_rev': {s: "", h: "", t: "$$mdi:keyboard-tab-reverse$$"}
+    '&cyc_mode': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "$$mdi:tab$$"}
+
     # Symbol Layer
     '&hmr HOME LC(LEFT)': {s: "", h: "$$mdi:arrow-left-bold-box-outline$$", t: "$$mdi:arrow-left-bold$$"}
     '&hmr END LC(RIGHT)': {s: "", h: "$$mdi:arrow-right-bold-box-outline$$", t: "$$mdi:arrow-right-bold$$"}
@@ -233,7 +241,7 @@ parse_config:
  
     # Home Row Mods (HRM) - Display Modifiers as Subscripts
  
-    '&hmr LEFT_WIN S': {s: "", h: "$$windows$$", t: "S"}
+    '&hmr LGUI S': {s: "", h: "$$windows$$", t: "S"}
     '&hmr LEFT_ALT T': {s: "", h: "$$mdi:apple-keyboard-option$$", t: "T"}
     '&hmr LEFT_SHIFT H': {s: "", h: "$$mdi:apple-keyboard-shift$$", t: "H"}
     '&hmr LCTRL C': {s: "", h: "$$mdi:apple-keyboard-control$$", t: "C"}
@@ -259,48 +267,6 @@ parse_config:
     '&hmr RIGHT_WIN SEMICOLON': {s: "", h: "$$windows$$", t: ";"}
  
     
-    # Layers
-    "&ltq 1 BACKSPACE":
-      tap:  $$mdi:backspace$$
-      hold: '$$mdi:navigation-variant$$'
-    "&ltq 3 TAB":
-      tap: $$mdi:keyboard-tab$$
-      hold: $$mdi:numeric$$
-    "&ltq 2 SPACE":
-      tap: $$mdi:keyboard-space$$
-      hold: $$mdi:symbol$$
-    "&ltq 3 ENTER":
-      tap: $$mdi:keyboard-return$$
-      hold: $$mdi:numeric$$
-    "&ltq 1 DELETE":
-      tap: $$mdi:backspace-reverse-outline$$
-      hold: $$mdi:navigation-variant$$
-    # Home rows
-    "&hm LEFT_GUI A":
-      tap: 'A'
-      shifted: $$mdi:apple-keyboard-command$$
-    "&hm LEFT_ALT S":
-      tap: 'S'
-      shifted: $$mdi:apple-keyboard-option$$
-    "&hm LEFT_CONTROL D":
-      tap: 'D'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm LEFT_SHIFT F":
-      tap: 'F'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_SHIFT J":
-      tap: 'J'
-      shifted: $$mdi:apple-keyboard-shift$$
-    "&hm RIGHT_CONTROL K":
-      tap: 'K'
-      shifted: $$mdi:apple-keyboard-control$$
-    "&hm RIGHT_ALT L":
-      tap: 'L'
-      shifted: $$mdi:apple-keyboard-option$$
-    # self behaviors
-    "&hm LG(LS(V)) P":
-      tap: 'P'
-      shifted: $$mdi:content-copy$$
     # Mouse
     "&msc SCRL_UP":
       tap: $$mdi:pan-up$$
@@ -342,20 +308,12 @@ parse_config:
       tap: $$mdi:mouse-scroll-wheel$$
     # Modifiers
     "&caps_word": $$mdi:alpha-w-box$$
-    "&kt RSHIFT":
-      tap: $$mdi:apple-keyboard-shift$$
-      hold: $$mdi:toggle-switch$$
  
     # Empty
     "&none":
       tap: $$mdi:minus-circle-outline$$
       type: none
  
-    # Whitespace
-    "&bkspc_del":
-      type: backspace
-      tap: $$mdi:backspace$$
-      shifted: $$mdi:backspace-reverse-outline$$
  
     # Bluetooth
     "&bt BT_SEL 0":
@@ -671,6 +629,8 @@ parse_config:
     # FUNCTIONS layer media combo: show only the "next song" symbol
     skip_previous:
       key: "$$mdi:skip-next$$"
+    sticky_shift_fn:
+      key: "$$mdi:apple-keyboard-shift$$"
     combo_minus:
       key:
         shifted: "_"

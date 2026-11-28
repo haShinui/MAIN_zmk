@@ -1,0 +1,17 @@
+description: |
+  Encoder for Cyclotab: each detent taps a hotkey directly (no behavior
+  queue). keys = <cw ccw> pairs; with two pairs, &cyc_mode switches between
+  them. The switch ends (selects) timeout-ms after the last detent.
+compatible: "zmk,behavior-cyclotab-encoder"
+properties:
+  "#sensor-binding-cells":
+    type: int
+    required: true
+    const: 0
+  keys:
+    type: array
+    required: true
+    description: e.g. <LA(TAB) LS(LA(TAB)) LC(TAB) LS(LC(TAB))>
+  timeout-ms:
+    type: int
+    default: 600
