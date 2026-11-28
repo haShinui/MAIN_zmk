@@ -100,8 +100,9 @@
         scroll_encoder: scroll_encoder {
             compatible = "zmk,behavior-smooth-scroll";
             #sensor-binding-cells = <0>;
-            notch-percent = <50>;               // scroll per detent: 50 = half a mouse-wheel notch (smaller steps)
-            smooth-ms = <0>;                    // 0 = one report per detent like a real wheel; the OS/browser animates it
+            notch-percent = <65>;               // scroll per detent: 65% of a mouse-wheel notch
+            smooth-ms = <16>;                   // short glide per detent (0 = one report per detent like a real wheel)
+            tick-ms = <4>;                      // 4 small reports per detent
             acceleration-window-ms = <120>;     // only fast spinning accelerates
             max-acceleration-percent = <250>;   // up to 2.5x at full speed
         };
